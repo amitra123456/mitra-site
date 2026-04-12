@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+*.DS_Store
+.env
+.env.local
+.vercel
+public/manifest.json
+public/content/
+*.log

@@ -1,0 +1,10 @@
+{
+  "title": "Silent Data Corruption in Multi-Stage AI Pipelines",
+  "type": "research",
+  "excerpt": "Original research on value profiling and corruption propagation in enterprise ML pipelines — with a novel detection framework validated across 3 financial services environments.",
+  "tags": ["MLOps", "Data Quality", "Research", "AI Engineering"],
+  "date": "January 2025",
+  "author": "Aniruddha Mitra",
+  "featured": true,
+  "file": "silent-data-corruption.pdf"
+}

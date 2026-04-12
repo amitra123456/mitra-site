@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aniruddha Mitra — Data & AI Executive Leader</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0A0F;--bg2:#111118;--bg3:#16161F;--bg4:#1C1C27;
+  --accent:#C8A96E;--accent2:#E8C98A;--adim:rgba(200,169,110,0.12);--abrd:rgba(200,169,110,0.28);
+  --text:#F0EDE8;--t2:#9E9B95;--t3:#6B6865;
+  --brd:rgba(255,255,255,0.07);--green:#4AAD82;--red:#D45A5A;--blue:#4A8FD4;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--abrd);border-radius:2px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd)}
+.nlogo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--accent);letter-spacing:.06em;text-decoration:none}
+.nlogo span{color:var(--t2);font-weight:300}
+.nlinks{display:flex;gap:1.4rem;align-items:center}
+.nlinks a{font-size:.75rem;font-weight:500;color:var(--t2);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.nlinks a:hover{color:var(--accent)}
+.n-join{background:var(--accent)!important;color:#0A0A0F!important;padding:7px 16px;border-radius:4px;font-weight:600!important}
+.n-join:hover{background:var(--accent2)!important}
+
+/* BUTTONS */
+.btn-g{background:var(--accent);color:#0A0A0F;border:none;padding:13px 26px;border-radius:4px;font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-g:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-o{background:transparent;color:var(--text);border:1px solid var(--brd);padding:13px 26px;border-radius:4px;font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-o:hover{border-color:var(--accent);color:var(--accent)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 460px;padding-top:68px;position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;background-image:linear-gradient(var(--brd) 1px,transparent 1px),linear-gradient(90deg,var(--brd) 1px,transparent 1px);background-size:60px 60px;opacity:.35;pointer-events:none}
+.hglow{position:absolute;top:20%;right:15%;width:500px;height:500px;background:radial-gradient(circle,rgba(200,169,110,.06),transparent 65%);pointer-events:none}
+.hleft{display:flex;flex-direction:column;justify-content:center;padding:5rem 3rem 5rem 5rem;position:relative;z-index:1}
+.ey{font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1.4rem;display:flex;align-items:center;gap:10px}
+.ey::before{content:'';display:block;width:22px;height:1px;background:var(--accent)}
+.hname{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,5.5rem);font-weight:300;line-height:1;color:var(--text);margin-bottom:.15em}
+.hname strong{font-weight:600;color:var(--accent);display:block}
+.hrole{font-size:.92rem;font-weight:300;color:var(--t2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.6rem}
+.hdesc{font-size:.9rem;color:var(--t2);line-height:1.85;max-width:450px;margin-bottom:2.2rem}
+.hdesc em{color:var(--accent);font-style:normal;font-weight:500}
+.hacts{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.8rem}
+.hm{display:flex;gap:2.2rem}
+.met{border-left:2px solid var(--abrd);padding-left:.9rem}
+.mn{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:var(--accent);line-height:1;display:block}
+.ml{font-size:.68rem;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;margin-top:1px}
+.hright{display:flex;align-items:center;justify-content:center;padding:3rem 4rem 3rem 2rem;position:relative;z-index:1}
+.hcard{background:var(--bg3);border:1px solid var(--brd);border-radius:14px;padding:1.6rem;width:100%;max-width:360px}
+.hclbl{font-size:.66rem;text-transform:uppercase;letter-spacing:.16em;color:var(--t3);margin-bottom:1.3rem;padding-bottom:.8rem;border-bottom:1px solid var(--brd)}
+.erow{display:flex;align-items:center;gap:10px;padding:8px 11px;border-radius:6px;background:var(--bg4);border:1px solid var(--brd);margin-bottom:8px;transition:border-color .2s}
+.erow:hover{border-color:var(--abrd)}
+.edot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.etxt{font-size:.78rem;color:var(--t2);flex:1}
+.ebdg{font-size:.62rem;padding:2px 7px;border-radius:100px;background:var(--adim);color:var(--accent);font-weight:500}
+.ibar{margin-top:1.3rem;padding-top:1.3rem;border-top:1px solid var(--brd)}
+.irow{display:flex;justify-content:space-between;font-size:.7rem;color:var(--t3);margin-bottom:6px}
+.iv{color:var(--accent);font-weight:500}
+.itr{height:3px;background:var(--bg);border-radius:2px;margin-bottom:8px}
+.ifl{height:3px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+
+/* SECTION */
+.sec{padding:6.5rem 5rem;position:relative}
+.seca{background:var(--bg2)}
+.sh{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,2.9rem);font-weight:300;color:var(--text);margin-bottom:.7rem;line-height:1.1}
+.sh em{font-style:italic;color:var(--accent)}
+.ss{font-size:.86rem;color:var(--t2);max-width:520px;line-height:1.8;margin-bottom:2.5rem}
+.gb{width:40px;height:2px;background:linear-gradient(90deg,var(--accent),transparent);margin-bottom:1.6rem}
+
+/* NETWORK HERO BANNER */
+.net-banner{background:linear-gradient(135deg,#0D0D18 0%,#141420 50%,#0A0A0F 100%);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);padding:5rem;position:relative;overflow:hidden}
+.net-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(200,169,110,.07),transparent 65%);pointer-events:none}
+.net-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 420px;gap:4rem;align-items:center}
+.net-badge{display:inline-flex;align-items:center;gap:8px;background:var(--adim);border:1px solid var(--abrd);border-radius:100px;padding:5px 14px;font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem}
+.net-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.net-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;color:var(--text);line-height:1.1;margin-bottom:1rem}
+.net-title strong{font-weight:600;color:var(--accent)}
+.net-desc{font-size:.88rem;color:var(--t2);line-height:1.85;margin-bottom:2rem;max-width:500px}
+.net-stats{display:flex;gap:2rem;margin-bottom:2rem}
+.nst{text-align:center;padding:1rem 1.5rem;background:rgba(255,255,255,.03);border:1px solid var(--brd);border-radius:8px}
+.nst-n{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--accent);display:block}
+.nst-l{font-size:.68rem;color:var(--t3);text-transform:uppercase;letter-spacing:.1em}
+.join-card{background:var(--bg3);border:1px solid var(--abrd);border-radius:16px;padding:2rem;position:relative;overflow:hidden}
+.join-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2),transparent)}
+.jc-title{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:1.2rem}
+.jform{display:flex;flex-direction:column;gap:9px}
+.fl{font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:3px;display:block}
+.fi,.fs,.fta{width:100%;background:var(--bg4);border:1px solid var(--brd);border-radius:6px;padding:9px 12px;font-family:'Outfit',sans-serif;font-size:.82rem;color:var(--text);outline:none;transition:border-color .2s}
+.fi:focus,.fs:focus,.fta:focus{border-color:var(--abrd)}
+.fi::placeholder{color:var(--t3)}
+.fs option{background:var(--bg4)}
+.fta{min-height:70px;resize:vertical;line-height:1.5}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pub-btn{background:var(--accent);color:#0A0A0F;border:none;padding:11px;border-radius:4px;font-family:'Outfit',sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;width:100%;margin-top:2px}
+.pub-btn:hover{background:var(--accent2)}
+
+/* DIRECTORY */
+.dir-filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.df{padding:7px 16px;border-radius:100px;border:1px solid var(--brd);background:transparent;font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;color:var(--t2)}
+.df.on,.df:hover{background:var(--accent);border-color:var(--accent);color:#0A0A0F}
+.dir-search{background:var(--bg3);border:1px solid var(--brd);border-radius:8px;padding:9px 14px;font-family:'Outfit',sans-serif;font-size:.82rem;color:var(--text);outline:none;width:260px;transition:border-color .2s;margin-bottom:1.8rem}
+.dir-search:focus{border-color:var(--abrd)}
+.dir-search::placeholder{color:var(--t3)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem}
+.mcard{background:var(--bg3);border:1px solid var(--brd);border-radius:10px;padding:1.3rem;transition:all .2s;position:relative}
+.mcard:hover{border-color:var(--abrd);transform:translateY(-1px)}
+.mav{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#0A0A0F;margin-bottom:.9rem;flex-shrink:0}
+.mname{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.mtitle{font-size:.75rem;color:var(--t2);margin-bottom:2px}
+.mco{font-size:.72rem;color:var(--t3);margin-bottom:.8rem}
+.mtag{display:inline-block;padding:2px 8px;border-radius:100px;background:var(--adim);border:1px solid var(--abrd);font-size:.62rem;color:var(--accent);margin-right:3px;margin-bottom:3px}
+.mint-btn{width:100%;background:transparent;border:1px solid var(--brd);color:var(--t2);padding:6px;border-radius:5px;font-family:'Outfit',sans-serif;font-size:.72rem;cursor:pointer;transition:all .2s;margin-top:.8rem}
+.mint-btn:hover{border-color:var(--abrd);color:var(--accent)}
+.mnew{position:absolute;top:.8rem;right:.8rem;background:var(--green);color:white;font-size:.6rem;padding:2px 6px;border-radius:100px;font-weight:600}
+
+/* EVENTS */
+.egrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.3rem}
+.ecard{background:var(--bg3);border:1px solid var(--brd);border-radius:10px;overflow:hidden;transition:all .2s}
+.ecard:hover{border-color:var(--abrd)}
+.ehead{padding:1.2rem 1.3rem .8rem;border-bottom:1px solid var(--brd)}
+.etype{font-size:.63rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:3px 9px;border-radius:100px;display:inline-block;margin-bottom:.6rem}
+.et-rnd{background:rgba(74,143,212,.15);color:#7AB8E8}
+.et-wksp{background:rgba(74,173,130,.15);color:#6DC9A0}
+.et-panel{background:rgba(200,169,110,.15);color:var(--accent)}
+.etitle{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--text);line-height:1.3}
+.ebody{padding:.9rem 1.3rem}
+.edate{display:flex;align-items:center;gap:6px;font-size:.75rem;color:var(--t3);margin-bottom:.4rem}
+.edesc{font-size:.78rem;color:var(--t2);line-height:1.6;margin-bottom:.9rem}
+.ersvp{width:100%;background:transparent;border:1px solid var(--abrd);color:var(--accent);padding:8px;border-radius:5px;font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:500;cursor:pointer;transition:all .2s;letter-spacing:.06em;text-transform:uppercase}
+.ersvp:hover{background:var(--accent);color:#0A0A0F}
+.ersvp.done{background:var(--adim);color:var(--accent);cursor:default}
+
+/* JOBS */
+.jgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.2rem}
+.jcard{background:var(--bg3);border:1px solid var(--brd);border-radius:10px;padding:1.3rem;transition:all .2s}
+.jcard:hover{border-color:var(--abrd)}
+.jco{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.jtitle{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.4rem;line-height:1.3}
+.jmeta{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.6rem}
+.jbdg{font-size:.63rem;padding:2px 8px;border-radius:100px;background:var(--bg4);border:1px solid var(--brd);color:var(--t3)}
+.jdesc{font-size:.78rem;color:var(--t2);line-height:1.6;margin-bottom:.9rem}
+.japply{background:transparent;border:1px solid var(--brd);color:var(--t2);padding:7px 14px;border-radius:5px;font-family:'Outfit',sans-serif;font-size:.72rem;cursor:pointer;transition:all .2s;margin-right:6px}
+.japply:hover{border-color:var(--abrd);color:var(--accent)}
+.jpost-btn{background:var(--adim);border:1px solid var(--abrd);color:var(--accent);padding:7px 14px;border-radius:5px;font-family:'Outfit',sans-serif;font-size:.72rem;cursor:pointer;transition:all .2s}
+.jpost-btn:hover{background:var(--accent);color:#0A0A0F}
+
+/* DISCUSSION WALL */
+.dwall{display:flex;flex-direction:column;gap:1rem}
+.dpost-box{background:var(--bg3);border:1px solid var(--brd);border-radius:10px;padding:1.2rem;margin-bottom:1.5rem}
+.dpost-header{display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem}
+.dav-sm{width:32px;height:32px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:.85rem;font-weight:600;color:#0A0A0F;flex-shrink:0}
+.dpost-author{font-size:.8rem;color:var(--t2)}
+.dpost-author strong{color:var(--text)}
+.dpost-input{width:100%;background:var(--bg4);border:1px solid var(--brd);border-radius:7px;padding:10px 13px;font-family:'Outfit',sans-serif;font-size:.83rem;color:var(--text);outline:none;resize:none;min-height:70px;margin-bottom:.8rem;transition:border-color .2s}
+.dpost-input:focus{border-color:var(--abrd)}
+.dpost-input::placeholder{color:var(--t3)}
+.dpost-footer{display:flex;justify-content:space-between;align-items:center}
+.dtopic-sel{background:var(--bg4);border:1px solid var(--brd);border-radius:5px;padding:6px 10px;font-family:'Outfit',sans-serif;font-size:.75rem;color:var(--t2);outline:none}
+.dtopic-sel:focus{border-color:var(--abrd)}
+.dsubmit{background:var(--accent);color:#0A0A0F;border:none;padding:7px 18px;border-radius:4px;font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:600;cursor:pointer;transition:all .2s;letter-spacing:.06em;text-transform:uppercase}
+.dsubmit:hover{background:var(--accent2)}
+.ditem{background:var(--bg3);border:1px solid var(--brd);border-radius:10px;padding:1.2rem;transition:border-color .2s}
+.ditem:hover{border-color:rgba(255,255,255,.12)}
+.ditem-head{display:flex;align-items:flex-start;gap:.9rem;margin-bottom:.7rem}
+.dav-c{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:#0A0A0F;flex-shrink:0}
+.dauthor{font-size:.82rem;font-weight:500;color:var(--text)}
+.dsubtitle{font-size:.7rem;color:var(--t3)}
+.dtime{font-size:.68rem;color:var(--t3);margin-left:auto}
+.dtopic-tag{font-size:.62rem;padding:2px 8px;border-radius:100px;background:var(--adim);border:1px solid var(--abrd);color:var(--accent);margin-bottom:.6rem;display:inline-block}
+.dbody{font-size:.83rem;color:var(--t2);line-height:1.7;margin-bottom:.8rem}
+.dactions{display:flex;gap:.8rem}
+.dact{background:none;border:none;color:var(--t3);font-family:'Outfit',sans-serif;font-size:.72rem;cursor:pointer;display:flex;align-items:center;gap:4px;transition:color .2s;padding:0}
+.dact:hover{color:var(--accent)}
+.dact svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* CONTENT CARDS */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.3rem}
+.ccard{background:var(--bg3);border:1px solid var(--brd);border-radius:10px;padding:1.3rem;transition:all .2s;cursor:pointer;position:relative;overflow:hidden}
+.ccard::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .2s}
+.ccard:hover{border-color:var(--abrd);transform:translateY(-2px)}
+.ccard:hover::after{opacity:1}
+.ctp{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:3px 9px;border-radius:100px;display:inline-block;margin-bottom:.7rem}
+.t-r{background:rgba(74,143,212,.15);color:#7AB8E8}
+.t-b{background:rgba(74,173,130,.15);color:#6DC9A0}
+.t-w{background:rgba(200,169,110,.15);color:var(--accent)}
+.t-f{background:rgba(212,90,90,.15);color:#E88888}
+.ctit{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:.5rem;line-height:1.3}
+.cex{font-size:.77rem;color:var(--t2);line-height:1.65;margin-bottom:.8rem}
+.cmet{display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:var(--t3)}
+.ctag{padding:2px 7px;border-radius:100px;background:var(--bg4);border:1px solid var(--brd);font-size:.63rem;color:var(--t3)}
+
+/* DROP */
+.drop{border:2px dashed var(--brd);border-radius:12px;padding:2rem;text-align:center;transition:all .3s;cursor:pointer;margin-bottom:1.5rem;position:relative}
+.drop:hover,.drop.over{border-color:var(--accent);background:var(--adim)}
+.drop input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.dtit{font-size:.88rem;font-weight:500;color:var(--t2);margin-bottom:.35rem;margin-top:.7rem}
+.dhint{font-size:.73rem;color:var(--t3);line-height:1.6}
+.dhint strong{color:var(--accent)}
+.uform{background:var(--bg3);border:1px solid var(--brd);border-radius:10px;padding:1.3rem;margin-bottom:1.4rem;display:none}
+.uform.show{display:block}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:9px}
+.frow.full{grid-template-columns:1fr}
+.pbtn{background:var(--accent);color:#0A0A0F;border:none;padding:9px 20px;border-radius:4px;font-family:'Outfit',sans-serif;font-size:.77rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.pbtn:hover{background:var(--accent2)}
+.cbtn{background:transparent;color:var(--t3);border:1px solid var(--brd);padding:9px 16px;border-radius:4px;font-family:'Outfit',sans-serif;font-size:.77rem;cursor:pointer;margin-left:7px}
+
+/* PORTFOLIO */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.3rem}
+.pcard{background:var(--bg3);border:1px solid var(--brd);border-radius:10px;overflow:hidden;transition:all .2s}
+.pcard:hover{border-color:var(--abrd);transform:translateY(-1px)}
+.phead{padding:1.2rem 1.3rem .8rem;border-bottom:1px solid var(--brd);display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
+.pco{font-size:.67rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+.ptit{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--text);line-height:1.25}
+.pbdg{font-size:.62rem;padding:2px 8px;border-radius:100px;background:var(--bg4);border:1px solid var(--brd);color:var(--t3);white-space:nowrap;flex-shrink:0}
+.pbody{padding:.9rem 1.3rem}
+.pdsc{font-size:.77rem;color:var(--t2);line-height:1.7;margin-bottom:.8rem}
+.pms{display:flex;flex-wrap:wrap;gap:6px}
+.pm{background:var(--bg4);border:1px solid var(--brd);border-radius:5px;padding:4px 8px;font-size:.69rem}
+.pm strong{color:var(--accent);font-weight:600;display:block;font-size:.8rem}
+.pm span{color:var(--t3)}
+
+/* SPEAKING */
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.scard{background:var(--bg3);border:1px solid var(--brd);border-radius:10px;padding:1.2rem;transition:all .2s;display:flex;gap:.9rem;align-items:flex-start}
+.scard:hover{border-color:var(--abrd)}
+.sic{width:40px;height:40px;border-radius:7px;background:var(--adim);border:1px solid var(--abrd);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sic svg{width:17px;height:17px;stroke:var(--accent);fill:none;stroke-width:1.8}
+.styp{font-size:.62rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+.stit{font-size:.84rem;font-weight:500;color:var(--text);margin-bottom:2px;line-height:1.35}
+.sev{font-size:.71rem;color:var(--t3)}
+
+/* BOARD */
+.board-wrap{background:linear-gradient(135deg,var(--bg3),var(--bg4));border:1px solid var(--brd);border-radius:16px;padding:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.btag{padding:3px 11px;background:var(--adim);border:1px solid var(--abrd);border-radius:100px;font-size:.68rem;color:var(--accent);display:inline-block;margin:2px}
+
+/* CONTACT */
+.cgr{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start}
+.clinks{display:flex;flex-direction:column;gap:.8rem;margin-bottom:1.8rem}
+.clink{display:flex;align-items:center;gap:.9rem;padding:.9rem 1.1rem;background:var(--bg3);border:1px solid var(--brd);border-radius:8px;text-decoration:none;color:var(--text);transition:all .2s}
+.clink:hover{border-color:var(--abrd);color:var(--accent)}
+.clic{width:33px;height:33px;border-radius:5px;background:var(--adim);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.clic svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:1.8}
+.cll{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);display:block;margin-bottom:1px}
+.clv{font-size:.8rem;font-weight:500}
+
+/* ABOUT */
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start}
+.ap{font-size:.88rem;color:var(--t2);line-height:1.85;margin-bottom:1rem}
+.ap em{color:var(--accent);font-style:normal;font-weight:500}
+.tl{margin-top:1.8rem}
+.tli{display:flex;gap:1.3rem;margin-bottom:1.5rem;position:relative}
+.tli::before{content:'';position:absolute;left:5px;top:20px;bottom:-15px;width:1px;background:var(--brd)}
+.tli:last-child::before{display:none}
+.tld{width:11px;height:11px;border-radius:50%;border:2px solid var(--accent);background:var(--bg);flex-shrink:0;margin-top:3px}
+.tly{font-size:.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1px}
+.tlr{font-size:.84rem;font-weight:500;color:var(--text);margin-bottom:1px}
+.tlo{font-size:.74rem;color:var(--t3)}
+.skgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:1.8rem}
+.sk{background:var(--bg3);border:1px solid var(--brd);border-radius:7px;padding:.85rem 1rem;transition:border-color .2s}
+.sk:hover{border-color:var(--abrd)}
+.skn{font-size:.77rem;font-weight:500;color:var(--text);margin-bottom:2px}
+.skd{font-size:.69rem;color:var(--t3);line-height:1.5}
+
+/* MODAL */
+.modal-ov{position:fixed;inset:0;background:rgba(10,10,15,.85);z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-ov.open{display:flex}
+.modal{background:var(--bg3);border:1px solid var(--abrd);border-radius:16px;padding:2rem;width:100%;max-width:480px;position:relative;max-height:90vh;overflow-y:auto}
+.modal::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2),transparent);border-radius:16px 16px 0 0}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+.modal-sub{font-size:.8rem;color:var(--t2);margin-bottom:1.5rem;line-height:1.6}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--t3);cursor:pointer;font-size:1.3rem;line-height:1;padding:4px}
+.modal-form{display:flex;flex-direction:column;gap:10px}
+
+/* CHAT */
+.cfab{position:fixed;bottom:2rem;right:2rem;z-index:1500}
+.ctrig{width:54px;height:54px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(200,169,110,.35);transition:all .2s}
+.ctrig:hover{transform:scale(1.07);background:var(--accent2)}
+.ctrig svg{width:22px;height:22px;stroke:#0A0A0F;fill:none;stroke-width:2}
+.cwin{position:fixed;bottom:5rem;right:2rem;width:380px;background:var(--bg3);border:1px solid var(--brd);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.55);z-index:1500;display:none;flex-direction:column;overflow:hidden;max-height:560px}
+.cwin.open{display:flex}
+.chead{padding:.9rem 1.1rem;background:var(--bg4);border-bottom:1px solid var(--brd);display:flex;align-items:center;gap:10px;flex-shrink:0}
+.cav{width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:#0A0A0F;flex-shrink:0}
+.chin{flex:1}
+.chn{font-size:.84rem;font-weight:600;color:var(--text)}
+.chs{font-size:.67rem;color:var(--t3);display:flex;align-items:center;gap:4px}
+.sdot{width:5px;height:5px;border-radius:50%;background:var(--green)}
+.cclose{background:none;border:none;color:var(--t3);cursor:pointer;padding:3px}
+.cmsgs{flex:1;overflow-y:auto;padding:.9rem;display:flex;flex-direction:column;gap:9px;min-height:180px}
+.msg{max-width:83%;padding:9px 13px;border-radius:12px;font-size:.81rem;line-height:1.6}
+.msg.bot{background:var(--bg4);color:var(--t2);border-bottom-left-radius:3px;align-self:flex-start;border:1px solid var(--brd)}
+.msg.user{background:var(--accent);color:#0A0A0F;border-bottom-right-radius:3px;align-self:flex-end;font-weight:500}
+.msg.loading{background:var(--bg4);border:1px solid var(--brd);align-self:flex-start;display:flex;gap:4px;align-items:center;padding:10px 13px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--t3);animation:bc 1.2s infinite}
+.dot:nth-child(2){animation-delay:.2s}.dot:nth-child(3){animation-delay:.4s}
+@keyframes bc{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.csugs{display:flex;flex-wrap:wrap;gap:5px;padding:0 .9rem .5rem}
+.csug{background:var(--bg4);border:1px solid var(--brd);color:var(--t3);padding:4px 10px;border-radius:100px;font-size:.69rem;cursor:pointer;transition:all .15s;font-family:'Outfit',sans-serif}
+.csug:hover{border-color:var(--abrd);color:var(--accent)}
+.cinp{padding:.65rem .9rem;border-top:1px solid var(--brd);display:flex;gap:6px;align-items:center;flex-shrink:0}
+.ci{flex:1;background:var(--bg4);border:1px solid var(--brd);border-radius:6px;padding:8px 12px;font-family:'Outfit',sans-serif;font-size:.8rem;color:var(--text);outline:none;transition:border-color .2s}
+.ci:focus{border-color:var(--abrd)}
+.ci::placeholder{color:var(--t3)}
+.sndbtn{width:33px;height:33px;border-radius:6px;background:var(--accent);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.sndbtn:hover{background:var(--accent2)}
+.sndbtn svg{width:13px;height:13px;stroke:#0A0A0F;fill:none;stroke-width:2.2}
+.vbtn{width:33px;height:33px;border-radius:6px;background:var(--bg4);border:1px solid var(--brd);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.vbtn:hover{border-color:var(--abrd)}
+.vbtn.on{background:var(--red);border-color:var(--red)}
+.vbtn svg{width:13px;height:13px;stroke:var(--t2);fill:none;stroke-width:2}
+.vbtn.on svg{stroke:white}
+
+/* VOICE OVERLAY */
+.vov{position:fixed;inset:0;background:rgba(10,10,15,.92);z-index:2500;display:none;flex-direction:column;align-items:center;justify-content:center}
+.vov.on{display:flex}
+.vring{width:100px;height:100px;border-radius:50%;border:2px solid rgba(200,169,110,.3);display:flex;align-items:center;justify-content:center;animation:vra 1.5s ease-in-out infinite;margin-bottom:1.4rem}
+@keyframes vra{0%,100%{transform:scale(1);border-color:rgba(200,169,110,.3)}50%{transform:scale(1.1);border-color:rgba(200,169,110,.8)}}
+.vcore{width:66px;height:66px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center}
+.vcore svg{width:26px;height:26px;stroke:#0A0A0F;fill:none;stroke-width:2}
+.vlbl{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text);margin-bottom:.35rem}
+.vsub{font-size:.74rem;color:var(--t3);margin-bottom:1.6rem}
+.vstop{background:transparent;border:1px solid var(--brd);color:var(--t2);padding:7px 18px;border-radius:4px;font-family:'Outfit',sans-serif;font-size:.76rem;cursor:pointer}
+
+/* FOOTER */
+footer{background:var(--bg);border-top:1px solid var(--brd);padding:2rem 5rem;display:flex;justify-content:space-between;align-items:center}
+.flogo{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--accent);letter-spacing:.06em}
+.fcopy{font-size:.71rem;color:var(--t3)}
+.flinks{display:flex;gap:1.3rem}
+.flinks a{font-size:.71rem;color:var(--t3);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:var(--accent)}
+
+/* TOAST */
+.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%) translateY(14px);background:var(--bg3);border:1px solid var(--abrd);color:var(--text);padding:8px 18px;border-radius:8px;font-size:.79rem;opacity:0;transition:all .3s;z-index:3000;white-space:nowrap;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* NEWSLETTER */
+.nl-bar{background:linear-gradient(90deg,var(--bg3),var(--bg4));border:1px solid var(--abrd);border-radius:12px;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem}
+.nl-left h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--text);margin-bottom:.3rem}
+.nl-left p{font-size:.8rem;color:var(--t2)}
+.nl-form{display:flex;gap:.5rem}
+.nl-in{background:var(--bg4);border:1px solid var(--brd);border-radius:5px;padding:9px 14px;font-family:'Outfit',sans-serif;font-size:.82rem;color:var(--text);outline:none;width:220px;transition:border-color .2s}
+.nl-in:focus{border-color:var(--abrd)}
+.nl-in::placeholder{color:var(--t3)}
+.nl-btn{background:var(--accent);color:#0A0A0F;border:none;padding:9px 18px;border-radius:5px;font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s}
+.nl-btn:hover{background:var(--accent2)}
+
+@media(max-width:960px){
+  nav{padding:0 1rem}.nlinks{gap:.7rem}
+  .hero{grid-template-columns:1fr}.hright{display:none}
+  .sec{padding:4rem 1.5rem}
+  .agrid,.cgr,.sgrid,.board-wrap,.net-inner{grid-template-columns:1fr}
+  .net-banner{padding:3rem 1.5rem}
+  footer{flex-direction:column;gap:.7rem;padding:1.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nlogo" href="#home">AM <span>/ Mitra</span></a>
+  <div class="nlinks">
+    <a href="#about">About</a>
+    <a href="#network">Network</a>
+    <a href="#research">Research</a>
+    <a href="#blog">Insights</a>
+    <a href="#portfolio">Work</a>
+    <a href="#speaking">Speaking</a>
+    <a href="#contact">Contact</a>
+    <a href="#network" class="n-join" onclick="openJoin()">Join Circle</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hbg"></div><div class="hglow"></div>
+  <div class="hleft">
+    <p class="ey">Data & AI Executive · Thought Leader</p>
+    <h1 class="hname">Aniruddha<strong>Mitra</strong></h1>
+    <p class="hrole">CDO · VP AI/Data · Enterprise Architect</p>
+    <p class="hdesc">25+ years turning data into enterprise value. From <em>Google Cloud</em> to <em>Fannie Mae</em> to <em>Comcast</em> — I architect the systems and lead the transformations that define how organizations compete with AI.</p>
+    <div class="hacts">
+      <a href="#portfolio" class="btn-g">View My Work</a>
+      <a href="#network" class="btn-o" onclick="openJoin()">Join The AI Leaders Circle</a>
+    </div>
+    <div class="hm">
+      <div class="met"><span class="mn">$850M+</span><span class="ml">GCP Commitments</span></div>
+      <div class="met"><span class="mn">25+</span><span class="ml">Years in Data & AI</span></div>
+      <div class="met"><span class="mn">$500M</span><span class="ml">AI Revenue Scaled</span></div>
+    </div>
+  </div>
+  <div class="hright">
+    <div class="hcard">
+      <div class="hclbl">Core Expertise</div>
+      <div class="erow"><div class="edot"></div><span class="etxt">AI-Native Data Architecture</span><span class="ebdg">Principal</span></div>
+      <div class="erow"><div class="edot"></div><span class="etxt">CDO Org Transformation</span><span class="ebdg">Executive</span></div>
+      <div class="erow"><div class="edot"></div><span class="etxt">GenAI Platform Engineering</span><span class="ebdg">Architect</span></div>
+      <div class="erow"><div class="edot"></div><span class="etxt">Financial Services AI</span><span class="ebdg">Domain</span></div>
+      <div class="erow"><div class="edot"></div><span class="etxt">Cloud-Native Migration</span><span class="ebdg">Strategic</span></div>
+      <div class="ibar">
+        <div class="irow"><span>PoC-to-Production Rate</span><span class="iv">+70%</span></div>
+        <div class="itr"><div class="ifl" style="width:70%"></div></div>
+        <div class="irow"><span>Dark Data Activated</span><span class="iv">95%</span></div>
+        <div class="itr"><div class="ifl" style="width:95%"></div></div>
+        <div class="irow"><span>Analyst Productivity Uplift</span><span class="iv">30%</span></div>
+        <div class="itr"><div class="ifl" style="width:30%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NETWORK HERO -->
+<div class="net-banner" id="network">
+  <div class="net-inner">
+    <div>
+      <div class="net-badge">Exclusive Community</div>
+      <h2 class="net-title">The <strong>AI Leaders Circle</strong></h2>
+      <p class="net-desc">A curated network of data executives, AI architects, CDOs, and technology leaders shaping the future of enterprise AI. Connect, share, and grow alongside peers who are building what's next.</p>
+      <div class="net-stats">
+        <div class="nst"><span class="nst-n" id="member-count">47</span><span class="nst-l">Members</span></div>
+        <div class="nst"><span class="nst-n">12</span><span class="nst-l">Events Hosted</span></div>
+        <div class="nst"><span class="nst-n">6</span><span class="nst-l">Open Roles</span></div>
+      </div>
+      <button class="btn-g" onclick="openJoin()">Join The Circle — It's Free</button>
+    </div>
+    <div class="join-card" id="join-inline">
+      <div class="jc-title">Join The AI Leaders Circle</div>
+      <div class="jform">
+        <div class="frow2">
+          <div><label class="fl">First Name</label><input class="fi" id="jfn" placeholder="Jane"/></div>
+          <div><label class="fl">Last Name</label><input class="fi" id="jln" placeholder="Smith"/></div>
+        </div>
+        <div><label class="fl">Email</label><input class="fi" id="jem" type="email" placeholder="jane@company.com"/></div>
+        <div><label class="fl">Phone</label><input class="fi" id="jph" type="tel" placeholder="+1 (555) 000-0000"/></div>
+        <div><label class="fl">LinkedIn URL</label><input class="fi" id="jli" placeholder="linkedin.com/in/janesmith"/></div>
+        <div class="frow2">
+          <div><label class="fl">Company</label><input class="fi" id="jco" placeholder="Acme Corp"/></div>
+          <div><label class="fl">Title / Rank</label>
+            <select class="fs" id="jrk">
+              <option value="">Select level</option>
+              <option>C-Suite (CEO/CDO/CTO/CIO)</option>
+              <option>VP / SVP / EVP</option>
+              <option>Director / Sr. Director</option>
+              <option>Principal / Staff</option>
+              <option>Manager / Lead</option>
+              <option>Investor / VC</option>
+              <option>Board Member</option>
+              <option>Founder / Entrepreneur</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div><label class="fl">Primary Interest</label>
+          <select class="fs" id="jint">
+            <option>Networking & Connections</option>
+            <option>Job Opportunities</option>
+            <option>Research & Thought Leadership</option>
+            <option>Events & Roundtables</option>
+            <option>Mentorship</option>
+            <option>All of the Above</option>
+          </select>
+        </div>
+        <button class="pub-btn" onclick="joinCircle()">Request to Join</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MEMBER DIRECTORY -->
+<section class="sec seca" id="directory">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+    <div>
+      <p class="ey">AI Leaders Circle</p>
+      <h2 class="sh">Member <em>Directory</em></h2>
+    </div>
+    <input class="dir-search" id="dir-search" placeholder="Search members…" oninput="filterDir()"/>
+  </div>
+  <div class="dir-filters">
+    <button class="df on" data-f="all" onclick="setFilter(this,'all')">All Members</button>
+    <button class="df" data-f="C-Suite" onclick="setFilter(this,'C-Suite')">C-Suite</button>
+    <button class="df" data-f="VP" onclick="setFilter(this,'VP')">VP / SVP</button>
+    <button class="df" data-f="Director" onclick="setFilter(this,'Director')">Director</button>
+    <button class="df" data-f="Investor" onclick="setFilter(this,'Investor')">Investor / VC</button>
+    <button class="df" data-f="Founder" onclick="setFilter(this,'Founder')">Founder</button>
+  </div>
+  <div class="mgrid" id="dir-grid"></div>
+</section>
+
+<!-- EVENTS -->
+<section class="sec" id="events">
+  <p class="ey">Events & Roundtables</p>
+  <h2 class="sh">Upcoming <em>Gatherings</em></h2>
+  <p class="ss">Virtual roundtables, workshops, and exclusive briefings for AI Leaders Circle members.</p>
+  <div class="egrid" id="events-grid"></div>
+</section>
+
+<!-- JOBS -->
+<section class="sec seca" id="jobs">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:1rem">
+    <div>
+      <p class="ey">Opportunity Board</p>
+      <h2 class="sh">Roles & <em>Opportunities</em></h2>
+      <p style="font-size:.84rem;color:var(--t2);max-width:480px;line-height:1.7;margin-top:.4rem">Curated CDO, VP AI, and senior data roles shared exclusively within the Circle.</p>
+    </div>
+    <button class="jpost-btn" onclick="openPostJob()">+ Post a Role</button>
+  </div>
+  <div class="jgrid" id="jobs-grid"></div>
+</section>
+
+<!-- DISCUSSION WALL -->
+<section class="sec" id="discussion">
+  <p class="ey">Community</p>
+  <h2 class="sh">Discussion <em>Wall</em></h2>
+  <p class="ss">Ask questions, share perspectives, and engage with the AI Leaders Circle community.</p>
+  <div class="dpost-box">
+    <div class="dpost-header">
+      <div class="dav-sm">M</div>
+      <span class="dpost-author"><strong>Aniruddha Mitra</strong> · Start a conversation</span>
+    </div>
+    <textarea class="dpost-input" id="dpost-txt" placeholder="Share an insight, ask a question, or spark a discussion…"></textarea>
+    <div class="dpost-footer">
+      <select class="dtopic-sel" id="dpost-topic">
+        <option>AI Strategy</option>
+        <option>Data Governance</option>
+        <option>GenAI & LLMs</option>
+        <option>CDO Leadership</option>
+        <option>Career & Hiring</option>
+        <option>Cloud Architecture</option>
+        <option>FinServ AI</option>
+        <option>General</option>
+      </select>
+      <button class="dsubmit" onclick="postDiscussion()">Post</button>
+    </div>
+  </div>
+  <div class="dwall" id="dwall"></div>
+</section>
+
+<!-- RESEARCH -->
+<section class="sec seca" id="research">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+    <div>
+      <p class="ey">Research & Papers</p>
+      <h2 class="sh">Published <em>Work</em></h2>
+    </div>
+    <button class="btn-o" onclick="openUp('r')" style="white-space:nowrap;height:fit-content">+ Upload Research</button>
+  </div>
+  <div class="drop" id="dr" onclick="trigF('r')">
+    <input type="file" id="fr" accept=".pdf,.docx,.md,.txt" onchange="handleF(this,'r')">
+    <svg width="32" height="32" fill="none" stroke="var(--t3)" stroke-width="1.4" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
+    <p class="dtit">Drop a research paper or white paper here</p>
+    <p class="dhint">Supports <strong>PDF, DOCX, MD</strong> · Auto-publishes below</p>
+  </div>
+  <div class="uform" id="uf-r">
+    <p style="font-size:.76rem;font-weight:600;color:var(--accent);margin-bottom:.9rem;text-transform:uppercase;letter-spacing:.1em">Publish Research</p>
+    <div class="frow"><div><label class="fl">Title</label><input class="fi" id="r-t" placeholder="Paper title"/></div><div><label class="fl">Type</label><select class="fs" id="r-ty"><option value="research">Research Paper</option><option value="whitepaper">White Paper</option><option value="framework">Framework</option></select></div></div>
+    <div class="frow full"><label class="fl">Abstract</label><textarea class="fta" id="r-a" placeholder="Brief summary…" style="min-height:60px"></textarea></div>
+    <div class="frow"><div><label class="fl">Tags</label><input class="fi" id="r-tg" placeholder="AI Governance, CDO"/></div><div><label class="fl">File</label><input class="fi" id="r-f" readonly/></div></div>
+    <div style="margin-top:5px"><button class="pbtn" onclick="pub('r')">Publish</button><button class="cbtn" onclick="closeUp('r')">Cancel</button></div>
+  </div>
+  <div class="cgrid" id="rg"></div>
+</section>
+
+<!-- BLOG -->
+<section class="sec" id="blog">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+    <div>
+      <p class="ey">Insights & Thought Leadership</p>
+      <h2 class="sh">From the <em>Field</em></h2>
+    </div>
+    <button class="btn-o" onclick="openUp('b')" style="white-space:nowrap;height:fit-content">+ Upload Article</button>
+  </div>
+  <div class="drop" id="db" onclick="trigF('b')">
+    <input type="file" id="fb" accept=".pdf,.docx,.md,.txt" onchange="handleF(this,'b')">
+    <svg width="32" height="32" fill="none" stroke="var(--t3)" stroke-width="1.4" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+    <p class="dtit">Drop an article, essay, or thought piece here</p>
+    <p class="dhint">Supports <strong>PDF, DOCX, MD, TXT</strong> · Publishes instantly</p>
+  </div>
+  <div class="uform" id="uf-b">
+    <p style="font-size:.76rem;font-weight:600;color:var(--accent);margin-bottom:.9rem;text-transform:uppercase;letter-spacing:.1em">Publish Insight</p>
+    <div class="frow"><div><label class="fl">Title</label><input class="fi" id="b-t" placeholder="Article title"/></div><div><label class="fl">Type</label><select class="fs" id="b-ty"><option value="blog">Blog Post</option><option value="research">Analysis</option><option value="framework">Framework</option></select></div></div>
+    <div class="frow full"><label class="fl">Summary</label><textarea class="fta" id="b-a" placeholder="What is this about?" style="min-height:60px"></textarea></div>
+    <div class="frow"><div><label class="fl">Tags</label><input class="fi" id="b-tg" placeholder="GenAI, Strategy"/></div><div><label class="fl">File</label><input class="fi" id="b-f" readonly/></div></div>
+    <div style="margin-top:5px"><button class="pbtn" onclick="pub('b')">Publish</button><button class="cbtn" onclick="closeUp('b')">Cancel</button></div>
+  </div>
+  <div class="cgrid" id="bg"></div>
+  <!-- Newsletter -->
+  <div class="nl-bar">
+    <div class="nl-left">
+      <h3>The AI Leaders Weekly</h3>
+      <p>Curated AI strategy insights, CDO leadership perspectives, and Circle member highlights — every Friday.</p>
+    </div>
+    <div class="nl-form">
+      <input class="nl-in" id="nl-email" type="email" placeholder="your@email.com"/>
+      <button class="nl-btn" onclick="nlSignup()">Subscribe</button>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="sec seca" id="portfolio">
+  <p class="ey">Portfolio & Case Studies</p>
+  <h2 class="sh">Signature <em>Engagements</em></h2>
+  <p class="ss">High-impact transformations across financial services, telecom, and cloud — with measurable outcomes.</p>
+  <div class="pgrid" id="pg"></div>
+</section>
+
+<!-- SPEAKING -->
+<section class="sec" id="speaking">
+  <p class="ey">Speaking & Media</p>
+  <h2 class="sh">Thought <em>Leadership</em> in Action</h2>
+  <p class="ss">Keynotes, panels, podcasts, and media on AI strategy, data transformation, and CDO leadership.</p>
+  <div class="sgrid" id="sg"></div>
+  <div style="margin-top:2rem;text-align:center"><a href="#contact" class="btn-g">Invite Me to Speak</a></div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec seca" id="about">
+  <div class="agrid">
+    <div>
+      <p class="ey">About Me</p>
+      <h2 class="sh">Where <em>Strategy</em><br>Meets Architecture</h2>
+      <div class="gb"></div>
+      <p class="ap">I'm a senior Data & AI executive with over <em>25 years</em> of experience leading enterprise-scale transformations across financial services, telecommunications, and cloud technology.</p>
+      <p class="ap">Most recently as <em>Field CDO / Head of Data & Analytics at Google Cloud</em>, I led AI and data transformations for major US financial institutions — driving $850M+ in GCP commitments and scaling AI revenue from $15M to $500M.</p>
+      <p class="ap">My work sits at the intersection of <em>technical architecture and business value</em>. I build platforms, teams, and operating models that turn data from a cost center into a competitive weapon.</p>
+      <p class="ap">I hold an <em>MBA in Finance from UMass Amherst</em> and an M.S. from Clemson University. US citizen, federal clearance eligible, based in Reston, Virginia.</p>
+    </div>
+    <div>
+      <p class="ey" style="margin-bottom:1.3rem">Career Journey</p>
+      <div class="tl">
+        <div class="tli"><div class="tld"></div><div><div class="tly">2020 – 2024</div><div class="tlr">Field CDO / Head of Data & Analytics</div><div class="tlo">Google Cloud</div></div></div>
+        <div class="tli"><div class="tld"></div><div><div class="tly">2016 – 2020</div><div class="tlr">Senior Director, Data Platform</div><div class="tlo">Fannie Mae</div></div></div>
+        <div class="tli"><div class="tld"></div><div><div class="tly">2010 – 2016</div><div class="tlr">VP Data & Analytics</div><div class="tlo">Xfinity / Comcast</div></div></div>
+        <div class="tli"><div class="tld"></div><div><div class="tly">2000 – 2010</div><div class="tlr">Senior Architect</div><div class="tlo">MicroStrategy</div></div></div>
+      </div>
+      <p class="ey" style="margin-top:2rem;margin-bottom:1rem">Core Domains</p>
+      <div class="skgrid">
+        <div class="sk"><div class="skn">Data Governance</div><div class="skd">AI-native frameworks, dark data, compliance</div></div>
+        <div class="sk"><div class="skn">GenAI Engineering</div><div class="skd">Agentic systems, LLMOps, MLOps</div></div>
+        <div class="sk"><div class="skn">Cloud Architecture</div><div class="skd">GCP, Databricks, Snowflake, Teradata</div></div>
+        <div class="sk"><div class="skn">CDO Operating Model</div><div class="skd">Cost center → revenue center transformation</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOARD -->
+<section class="sec" id="board">
+  <p class="ey">Board & Advisory</p>
+  <h2 class="sh" style="margin-bottom:.7rem">Board Participation <em>Enquiries</em></h2>
+  <p style="font-size:.86rem;color:var(--t2);max-width:540px;line-height:1.8;margin-bottom:2.2rem">Open to advisory and corporate board positions where data strategy, AI governance, and digital transformation are priorities.</p>
+  <div class="board-wrap">
+    <div>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--text);margin-bottom:1rem;line-height:1.3">Executive AI & data expertise for your board</p>
+      <p style="font-size:.82rem;color:var(--t2);line-height:1.8;margin-bottom:1.3rem">25+ years at the intersection of business strategy and data architecture — hands-on technical depth with P&L awareness in regulated industries.</p>
+      <div><span class="btag">AI Governance</span><span class="btag">Digital Transformation</span><span class="btag">Data Strategy</span><span class="btag">FinServ</span><span class="btag">Cloud Modernization</span><span class="btag">Federal Clearance</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:9px">
+      <label class="fl">Your Name & Title</label><input class="fi" placeholder="Jane Smith, CEO"/>
+      <label class="fl">Organization</label><input class="fi" placeholder="Company / board name"/>
+      <label class="fl">Nature of Enquiry</label><textarea class="fta" placeholder="Brief description of the board role…" style="min-height:80px"></textarea>
+      <button class="pub-btn" onclick="showToast('Board enquiry submitted — Mitra will be in touch.')">Submit Enquiry</button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec seca" id="contact">
+  <div class="cgr">
+    <div>
+      <p class="ey">Contact</p>
+      <h2 class="sh">Let's Build<br><em>Something</em> Together</h2>
+      <div class="gb"></div>
+      <p style="font-size:.86rem;color:var(--t2);line-height:1.8;margin-bottom:1.6rem">Whether it's a CDO role, advisory, speaking, or strategic conversation — I'd love to connect.</p>
+      <div class="clinks">
+        <a class="clink" href="https://linkedin.com/in/aniruddhamitra" target="_blank">
+          <div class="clic"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+          <div><span class="cll">LinkedIn</span><span class="clv">linkedin.com/in/aniruddhamitra</span></div>
+        </a>
+        <a class="clink" href="/cdn-cgi/l/email-protection#6607080f141302020e07480b0f12140726030b070f0a4805090b">
+          <div class="clic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><span class="cll">Email</span><span class="clv"><span class="__cf_email__" data-cfemail="6c0d02051e190808040d420105181e0d2c09010d0500420f0301">[email&#160;protected]</span></span></div>
+        </a>
+        <a class="clink" href="#" onclick="showToast('Calendly link coming soon!');return false">
+          <div class="clic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div><span class="cll">Book a Call</span><span class="clv">Schedule 30 min via Calendly</span></div>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:.76rem;font-weight:600;color:var(--accent);margin-bottom:1rem;text-transform:uppercase;letter-spacing:.1em">Send a Message</p>
+      <div style="display:flex;flex-direction:column;gap:9px">
+        <div><label class="fl">Your Name</label><input class="fi" id="cn" placeholder="Full name"/></div>
+        <div><label class="fl">Email</label><input class="fi" id="ce" type="email" placeholder="you@company.com"/></div>
+        <div><label class="fl">Subject</label><select class="fs" id="cs"><option>CDO / Executive Role</option><option>Advisory / Consulting</option><option>Speaking Invitation</option><option>Board Enquiry</option><option>Partnership / Investment</option><option>Circle Membership</option><option>Other</option></select></div>
+        <div><label class="fl">Message</label><textarea class="fta" id="cm" placeholder="Tell me about the opportunity…"></textarea></div>
+        <button class="pub-btn" onclick="submitContact()">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="flogo">Aniruddha Mitra</div>
+  <div class="fcopy">© 2026 · Data & AI Executive · Reston, Virginia · The AI Leaders Circle</div>
+  <div class="flinks"><a href="#home">Home</a><a href="#network">Network</a><a href="#research">Research</a><a href="#portfolio">Work</a><a href="#contact">Contact</a></div>
+</footer>
+
+<!-- JOIN MODAL -->
+<div class="modal-ov" id="join-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeJoin()">×</button>
+    <div style="font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem">The AI Leaders Circle</div>
+    <div class="modal-title">Join the Network</div>
+    <div class="modal-sub">Connect with CDOs, AI architects, VPs of Data, investors, and technology leaders shaping enterprise AI.</div>
+    <div class="modal-form">
+      <div class="frow2">
+        <div><label class="fl">First Name</label><input class="fi" id="mfn" placeholder="Jane"/></div>
+        <div><label class="fl">Last Name</label><input class="fi" id="mln" placeholder="Smith"/></div>
+      </div>
+      <div><label class="fl">Email</label><input class="fi" id="mem" type="email" placeholder="jane@company.com"/></div>
+      <div><label class="fl">Phone</label><input class="fi" id="mph" type="tel" placeholder="+1 (555) 000-0000"/></div>
+      <div><label class="fl">LinkedIn URL</label><input class="fi" id="mli" placeholder="linkedin.com/in/janesmith"/></div>
+      <div class="frow2">
+        <div><label class="fl">Company</label><input class="fi" id="mco" placeholder="Acme Corp"/></div>
+        <div><label class="fl">Title / Rank</label>
+          <select class="fs" id="mrk">
+            <option value="">Select level</option>
+            <option>C-Suite (CEO/CDO/CTO/CIO)</option>
+            <option>VP / SVP / EVP</option>
+            <option>Director / Sr. Director</option>
+            <option>Principal / Staff</option>
+            <option>Manager / Lead</option>
+            <option>Investor / VC</option>
+            <option>Board Member</option>
+            <option>Founder / Entrepreneur</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div><label class="fl">Primary Interest</label>
+        <select class="fs" id="mint">
+          <option>Networking & Connections</option>
+          <option>Job Opportunities</option>
+          <option>Research & Thought Leadership</option>
+          <option>Events & Roundtables</option>
+          <option>Mentorship</option>
+          <option>All of the Above</option>
+        </select>
+      </div>
+      <button class="pub-btn" onclick="joinCircleModal()">Join The AI Leaders Circle</button>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO REQUEST MODAL -->
+<div class="modal-ov" id="intro-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeIntro()">×</button>
+    <div class="modal-title">Request an Intro</div>
+    <div class="modal-sub" id="intro-target">Send a connection request to this member.</div>
+    <div class="modal-form">
+      <div><label class="fl">Your Name</label><input class="fi" id="irn" placeholder="Your full name"/></div>
+      <div><label class="fl">Your Company & Role</label><input class="fi" id="irc" placeholder="CDO at Acme Corp"/></div>
+      <div><label class="fl">Why connect?</label><textarea class="fta" id="irm" placeholder="Briefly explain why you'd like to connect…" style="min-height:80px"></textarea></div>
+      <button class="pub-btn" onclick="sendIntro()">Send Introduction Request</button>
+    </div>
+  </div>
+</div>
+
+<!-- POST JOB MODAL -->
+<div class="modal-ov" id="job-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeJobModal()">×</button>
+    <div class="modal-title">Post a Role</div>
+    <div class="modal-sub">Share a senior data or AI leadership opportunity with the Circle.</div>
+    <div class="modal-form">
+      <div><label class="fl">Job Title</label><input class="fi" id="jbt" placeholder="CDO / VP Data & AI"/></div>
+      <div><label class="fl">Company</label><input class="fi" id="jbc" placeholder="Company name"/></div>
+      <div class="frow2">
+        <div><label class="fl">Location</label><input class="fi" id="jbl" placeholder="Remote / New York"/></div>
+        <div><label class="fl">Type</label><select class="fs" id="jbty"><option>Full-Time</option><option>Contract</option><option>Advisory</option><option>Board</option></select></div>
+      </div>
+      <div><label class="fl">Description</label><textarea class="fta" id="jbd" placeholder="Brief role description…" style="min-height:80px"></textarea></div>
+      <button class="pub-btn" onclick="submitJob()">Post Role</button>
+    </div>
+  </div>
+</div>
+
+<!-- AI CHAT -->
+<div class="cfab">
+  <div class="cwin" id="cwin">
+    <div class="chead">
+      <div class="cav">M</div>
+      <div class="chin">
+        <div class="chn">Ask Mitra — AI Concierge</div>
+        <div class="chs"><div class="sdot"></div>Online · Powered by Claude</div>
+      </div>
+      <button class="cclose" onclick="toggleChat()">
+        <svg width="15" height="15" stroke="var(--t3)" fill="none" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cmsgs" id="cmsgs"></div>
+    <div class="csugs" id="csugs">
+      <button class="csug" onclick="useSug(this)">Mitra's background?</button>
+      <button class="csug" onclick="useSug(this)">Key achievements?</button>
+      <button class="csug" onclick="useSug(this)">Join the Circle?</button>
+      <button class="csug" onclick="useSug(this)">Open to roles?</button>
+      <button class="csug" onclick="useSug(this)">Speaking topics?</button>
+    </div>
+    <div class="cinp">
+      <input class="ci" id="ci" placeholder="Ask about Mitra or the AI Leaders Circle…" onkeydown="if(event.key==='Enter')sendChat()"/>
+      <button class="vbtn" id="vb" onclick="startVoice()">
+        <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>
+      </button>
+      <button class="sndbtn" onclick="sendChat()">
+        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="ctrig" onclick="toggleChat()">
+    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  </button>
+</div>
+
+<!-- VOICE -->
+<div class="vov" id="vov">
+  <div class="vring"><div class="vcore"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/></svg></div></div>
+  <p class="vlbl">Listening…</p><p class="vsub">Ask about Mitra or the AI Leaders Circle</p>
+  <button class="vstop" onclick="stopVoice()">Stop</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── SEED DATA ──────────────────────────────────────────────
+const COLORS=['#C8A96E','#4A8FD4','#4AAD82','#D45A5A','#9B7FD4','#D4935A','#4ABDD4','#D4CA5A'];
+const RANKS=['C-Suite','VP','VP','Director','Director','Investor','Founder','Principal'];
+const SEED_MEMBERS=[
+  {fn:'Sarah',ln:'Chen',title:'Chief Data Officer',co:'JPMorgan Chase',li:'linkedin.com/in/sarahchen',rk:'C-Suite',tags:['FinServ AI','Data Governance'],isNew:true},
+  {fn:'Marcus',ln:'Williams',title:'VP of AI Engineering',co:'Databricks',li:'linkedin.com/in/marcusw',rk:'VP',tags:['GenAI','MLOps'],isNew:true},
+  {fn:'Priya',ln:'Patel',title:'SVP Data & Analytics',co:'Fannie Mae',li:'linkedin.com/in/priyap',rk:'VP',tags:['Regulatory AI','FinServ'],isNew:false},
+  {fn:'James',ln:'O\'Brien',title:'Managing Partner',co:'Sequoia Capital',li:'linkedin.com/in/jamesobrien',rk:'Investor',tags:['AI Startups','VC'],isNew:false},
+  {fn:'Linda',ln:'Zhao',title:'Founder & CEO',co:'DataLens AI',li:'linkedin.com/in/lindazhao',rk:'Founder',tags:['AI Platform','Startup'],isNew:true},
+  {fn:'Raj',ln:'Iyer',title:'Chief AI Officer',co:'Citi',li:'linkedin.com/in/rajiyer',rk:'C-Suite',tags:['Banking AI','LLMs'],isNew:false},
+  {fn:'Aisha',ln:'Browne',title:'Director, AI Strategy',co:'Deloitte',li:'linkedin.com/in/aishabrowne',rk:'Director',tags:['Consulting','GenAI'],isNew:false},
+  {fn:'Tom',ln:'Nakamura',title:'VP Data Platform',co:'Google Cloud',li:'linkedin.com/in/tomnakamura',rk:'VP',tags:['GCP','Data Mesh'],isNew:true},
+  {fn:'Elena',ln:'Vasquez',title:'CDO',co:'KeyBank',li:'linkedin.com/in/elenavaz',rk:'C-Suite',tags:['Banking','Data Governance'],isNew:false},
+  {fn:'Derek',ln:'Foster',title:'Sr. Director, ML',co:'Comcast',li:'linkedin.com/in/derekf',rk:'Director',tags:['MLOps','Streaming'],isNew:false},
+  {fn:'Nadia',ln:'Hassan',title:'Partner',co:'a16z',li:'linkedin.com/in/nadiah',rk:'Investor',tags:['AI Investment','FinTech'],isNew:true},
+  {fn:'Chris',ln:'Park',title:'Principal Architect',co:'BNSF Railway',li:'linkedin.com/in/chrisp',rk:'Principal',tags:['IoT','Edge AI'],isNew:false},
+];
+const EVENTS=[
+  {ty:'Roundtable',ti:'The CDO Identity Crisis: Cost Center vs Revenue Engine',dt:'April 22, 2026 · 2:00 PM ET',desc:'A candid executive roundtable on how CDOs can reframe their mandate and build P&L accountability into data strategy.',tc:'et-rnd'},
+  {ty:'Workshop',ti:'Building Production-Ready GenAI: From PoC to Platform',dt:'May 6, 2026 · 1:00 PM ET',desc:'A hands-on workshop on the architectural patterns that separate GenAI experiments from enterprise-grade AI systems.',tc:'et-wksp'},
+  {ty:'Panel',ti:'Agentic AI in Regulated Industries: Risk, Reward & Governance',dt:'May 20, 2026 · 3:00 PM ET',desc:'Panel discussion with CDOs and CROs from banking, insurance, and healthcare on governing autonomous AI systems.',tc:'et-panel'},
+  {ty:'Roundtable',ti:'FP&A AI Transformation: The CFO & CDO Partnership',dt:'June 3, 2026 · 2:30 PM ET',desc:'How leading finance organizations are deploying AI in planning, forecasting, and close cycles — with real case studies.',tc:'et-rnd'},
+];
+const JOBS=[
+  {co:'Fortune 50 Bank',ti:'Chief Data Officer',loc:'New York, NY',ty:'Full-Time',desc:'Leading US financial institution seeks a transformational CDO to own the enterprise data strategy, AI governance, and data platform modernization roadmap.'},
+  {co:'HealthTech Unicorn',ti:'VP of AI & Data Science',loc:'Remote / Boston',ty:'Full-Time',desc:'Fast-growing healthcare AI company seeks a VP to scale ML infrastructure, lead a 30-person team, and drive clinical AI products to market.'},
+  {co:'Regional Bank',ti:'Executive Director, Data Governance',loc:'Charlotte, NC',ty:'Full-Time',desc:'Mid-size regional bank building its first enterprise data governance program. Seeking an experienced leader to design and implement from the ground up.'},
+  {co:'AI Startup (Series B)',ti:'Head of Data Platform',loc:'Remote',ty:'Full-Time',desc:'Well-funded GenAI startup seeks a senior data platform lead to architect the foundation for their next-generation AI products.'},
+  {co:'Federal Agency',ti:'Director of AI Strategy',loc:'Washington, DC',ty:'Full-Time',desc:'Federal agency seeks a cleared AI strategist to lead adoption of ML/AI capabilities across mission-critical programs. Clearance required.'},
+  {co:'PE-Backed FinServ',ti:'Fractional CDO / Advisor',loc:'Remote',ty:'Advisory',desc:'Private equity-backed financial services firm seeking a fractional CDO for a 6-month transformation engagement. Equity upside available.'},
+];
+const SEED_POSTS=[
+  {author:'Aniruddha Mitra',role:'Field CDO · Google Cloud',color:'#C8A96E',topic:'AI Strategy',body:'Hot take: most enterprise AI programs fail not because of the technology, but because the CDO doesn\'t own the P&L. If data has no revenue line, it will always be cut. What\'s your experience?',time:'2 hours ago',likes:14,replies:6},
+  {author:'Sarah Chen',role:'CDO · JPMorgan Chase',color:'#4A8FD4',topic:'Data Governance',body:'We just completed a 6-month AI governance framework implementation across 40+ models. The hardest part wasn\'t the tech — it was getting business owners to sign off on model risk. Anyone else seeing this pattern?',time:'5 hours ago',likes:22,replies:9},
+  {author:'Marcus Williams',role:'VP AI Engineering · Databricks',color:'#4AAD82',topic:'GenAI & LLMs',body:'The "70% PoC to production" problem is real and it\'s structural. Teams optimize for demo performance, not operational reliability. We\'ve started requiring production SLAs to be written BEFORE a PoC gets approved. Game changer.',time:'1 day ago',likes:38,replies:14},
+];
+let members=[...SEED_MEMBERS];
+let jobs=[...JOBS];
+let posts=[...SEED_POSTS];
+let RS=[
+  {tp:'whitepaper',ti:'AI-Native Data Governance: From Policy to Platform',ex:'A practitioner\'s guide to rebuilding data governance for the age of generative AI — covering policy automation, LLM data contracts, and federated compliance architectures.',dt:'Mar 2025',tg:['AI Governance','GenAI','CDO']},
+  {tp:'research',ti:'Silent Data Corruption in Multi-Stage AI Pipelines',ex:'Original research on value profiling and corruption propagation in enterprise ML pipelines — with a novel detection framework validated across 3 financial services environments.',dt:'Jan 2025',tg:['MLOps','Data Quality','Research']},
+  {tp:'framework',ti:'The CDO Operating Model Canvas',ex:'A practical framework for transforming CDO organizations from cost centers to AI-driven revenue generators — covering org design, talent, governance, and P&L accountability.',dt:'Nov 2024',tg:['CDO','Operating Model','Leadership']},
+];
+let BL=[
+  {tp:'blog',ti:'Why Your AI PoC Is Stuck at 30% Conversion (And How to Fix It)',ex:'Most enterprises can run a PoC. Very few can industrialize it. Here\'s the structural gap I\'ve seen across 50+ enterprise AI programs — and the architecture that closes it.',dt:'Apr 2025',tg:['GenAI','Strategy','PoC']},
+  {tp:'blog',ti:'The CFO\'s AI Moment: FP&A Transformation at Scale',ex:'Finance leaders are sitting on the most AI-ready data estate in the enterprise. What\'s holding them back isn\'t technology — it\'s governance and trust. Here\'s the roadmap.',dt:'Feb 2025',tg:['FP&A','Finance AI','Transformation']},
+  {tp:'blog',ti:'Dear CDO: Stop Running IT. Start Generating Revenue.',ex:'The CDO role was invented to steward data. The next generation CDO must generate revenue with it. Here\'s how I made that transition — and what it takes.',dt:'Dec 2024',tg:['CDO','Leadership','Revenue']},
+];
+const PORT=[
+  {co:'KeyBank · Google Cloud',ti:'Teradata-to-GCP Migration & AI Banking Platform',badge:'$300M Commitment',desc:'Led end-to-end migration from Teradata to Google Cloud, establishing an AI-native data platform for KeyBank. Deployed real-time risk models, feature store, and DFAST/CCAR automation.',ms:[{v:'$300M',l:'GCP Commitment'},{v:'18h→2h',l:'DFAST Compression'},{v:'NPS 57→85',l:'Customer NPS'},{v:'95%',l:'Dark Data'}]},
+  {co:'Citi · Google Cloud',ti:'Enterprise AI Transformation & GenAI Revenue Program',badge:'$550M Commitment',desc:'Architected and closed a $550M Google Cloud commitment at Citi, including a GenAI-powered regulatory compliance platform reducing code refactoring cost by $9M.',ms:[{v:'$550M',l:'GCP Commitment'},{v:'$9M',l:'Regulatory Savings'},{v:'70%',l:'PoC→Prod Rate'},{v:'$4.5M',l:'Agent Savings'}]},
+  {co:'Xfinity / Comcast',ti:'Unified Data Fabric — 2,500+ Source Integration',badge:'Enterprise Platform',desc:'Built the Xfinity Unified Data Fabric connecting 2,500+ source systems, enabling enterprise-wide analytics, 30% analyst productivity uplift, and self-service BI at scale.',ms:[{v:'2,500+',l:'Sources'},{v:'30%',l:'Productivity'},{v:'Real-Time',l:'Streaming'},{v:'Enterprise',l:'Self-Service BI'}]},
+  {co:'Fannie Mae',ti:'MLOps Platform & Feature Store Deployment',badge:'Regulatory AI',desc:'Deployed Fannie Mae\'s first MLOps platform and centralized feature store, accelerating model delivery for DFAST, CCAR, and fair lending.',ms:[{v:'First',l:'MLOps at Fannie Mae'},{v:'DFAST/CCAR',l:'Regulatory Models'},{v:'Faster',l:'Deployment'},{v:'Fair Lending',l:'AI Compliance'}]},
+  {co:'Google Cloud Banking',ti:'AI Revenue Scale: $15M to $500M',badge:'Revenue Growth',desc:'Built and executed the AI go-to-market strategy for Google Cloud\'s US banking vertical, scaling AI revenue from $15M to $500M.',ms:[{v:'$15M→$500M',l:'AI Revenue'},{v:'Banking',l:'US Vertical'},{v:'Strategic',l:'C-Suite GTM'},{v:'3 Banks',l:'Anchors'}]},
+];
+const SPK=[
+  {ty:'Keynote',ti:'From Data Cost Center to AI Growth Engine',ev:'Google Cloud Next — Financial Services Summit',ic:'mic'},
+  {ty:'Panel',ti:'AI-Native CDO Operating Models for 2025',ev:'MIT Sloan CDO Executive Forum',ic:'users'},
+  {ty:'Keynote',ti:'Agentic AI in Regulated Industries: Risk & Reward',ev:'Databricks Data + AI Summit',ic:'mic'},
+  {ty:'Podcast',ti:'Building AI Orgs That Actually Deliver ROI',ev:'The Data Chief Podcast — Episode 214',ic:'radio'},
+  {ty:'Workshop',ti:'Structural Tension: The CDO\'s Framework for AI Strategy',ev:'Harvard Business Analytics Program',ic:'book'},
+  {ty:'Media',ti:'The Silent Data Corruption Problem in AI Pipelines',ev:'Forbes Technology Council',ic:'file'},
+];
+const ICS={mic:'<line x1="12" y1="1" x2="12" y2="14"/><path d="M5 9v3a7 7 0 0014 0V9"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>',users:'<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>',radio:'<circle cx="12" cy="12" r="2"/><path d="M4.93 4.93l1.41 1.41M17.66 4.93l-1.41 1.41M1.93 9H1M23 9h-.93"/>',book:'<path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>',file:'<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>'};
+const TCS={research:'t-r',blog:'t-b',whitepaper:'t-w',framework:'t-f'};
+
+// ── RENDER ────────────────────────────────────────────────
+function av(fn,ln,color){return `<div class="mav" style="background:${color}">${fn[0]}${ln[0]}</div>`;}
+let dirFilter='all';
+
+function renderDir(){
+  const q=(document.getElementById('dir-search')||{value:''}).value.toLowerCase();
+  const list=members.filter(m=>{
+    const matchF=dirFilter==='all'||m.rk.includes(dirFilter);
+    const matchQ=!q||(m.fn+m.ln+m.title+m.co).toLowerCase().includes(q);
+    return matchF&&matchQ;
+  });
+  document.getElementById('dir-grid').innerHTML=list.map((m,i)=>`
+    <div class="mcard">
+      ${m.isNew?'<div class="mnew">NEW</div>':''}
+      ${av(m.fn,m.ln,COLORS[i%COLORS.length])}
+      <div class="mname">${m.fn} ${m.ln}</div>
+      <div class="mtitle">${m.title}</div>
+      <div class="mco">${m.co}</div>
+      <div>${(m.tags||[]).map(t=>`<span class="mtag">${t}</span>`).join('')}</div>
+      <button class="mint-btn" onclick="openIntro('${m.fn} ${m.ln}','${m.title} at ${m.co}')">Request Intro</button>
+    </div>`).join('');
+  document.getElementById('member-count').textContent=members.length;
+}
+function setFilter(el,f){dirFilter=f;document.querySelectorAll('.df').forEach(d=>d.classList.remove('on'));el.classList.add('on');renderDir();}
+function filterDir(){renderDir();}
+
+function renderEvents(){
+  document.getElementById('events-grid').innerHTML=EVENTS.map(e=>`
+    <div class="ecard">
+      <div class="ehead"><span class="etype ${e.tc}">${e.ty}</span><div class="etitle">${e.ti}</div></div>
+      <div class="ebody">
+        <div class="edate"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>${e.dt}</div>
+        <p class="edesc">${e.desc}</p>
+        <button class="ersvp" onclick="rsvp(this)">RSVP for Free</button>
+      </div>
+    </div>`).join('');
+}
+function rsvp(btn){btn.textContent='✓ You\'re Registered';btn.classList.add('done');btn.disabled=true;showToast('✓ RSVP confirmed! You\'ll receive a calendar invite.');}
+
+function renderJobs(){
+  document.getElementById('jobs-grid').innerHTML=jobs.map(j=>`
+    <div class="jcard">
+      <div class="jco">${j.co}</div>
+      <div class="jtitle">${j.ti}</div>
+      <div class="jmeta"><span class="jbdg">${j.loc}</span><span class="jbdg">${j.ty}</span></div>
+      <p class="jdesc">${j.desc}</p>
+      <button class="japply" onclick="showToast('Application noted — Mitra will make the intro.')">Express Interest</button>
+    </div>`).join('');
+}
+
+function renderWall(){
+  document.getElementById('dwall').innerHTML=posts.map((p,i)=>`
+    <div class="ditem">
+      <div class="ditem-head">
+        <div class="dav-c" style="background:${p.color||'var(--accent)'}">${p.author.split(' ').map(w=>w[0]).join('').slice(0,2)}</div>
+        <div style="flex:1"><div class="dauthor">${p.author}</div><div class="dsubtitle">${p.role}</div></div>
+        <div class="dtime">${p.time}</div>
+      </div>
+      <div class="dtopic-tag">${p.topic}</div>
+      <p class="dbody">${p.body}</p>
+      <div class="dactions">
+        <button class="dact" onclick="likePost(${i},this)"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>${p.likes} Likes</button>
+        <button class="dact" onclick="showToast('Reply feature coming soon!')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>${p.replies} Replies</button>
+        <button class="dact" onclick="showToast('Post shared!')"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button>
+      </div>
+    </div>`).join('');
+}
+function likePost(i,btn){posts[i].likes++;renderWall();}
+function postDiscussion(){
+  const txt=document.getElementById('dpost-txt').value.trim();
+  const topic=document.getElementById('dpost-topic').value;
+  if(!txt){showToast('Please write something first.');return;}
+  posts.unshift({author:'Aniruddha Mitra',role:'Data & AI Executive',color:'#C8A96E',topic,body:txt,time:'Just now',likes:0,replies:0});
+  document.getElementById('dpost-txt').value='';
+  renderWall();showToast('✓ Post published to the Discussion Wall!');
+}
+
+function cc(i){return `<div class="ccard"><span class="ctp ${TCS[i.tp]||'t-b'}">${i.tp}</span><div class="ctit">${i.ti}</div><p class="cex">${i.ex}</p><div class="cmet"><span>${i.dt||''}</span><div style="display:flex;gap:4px;flex-wrap:wrap">${(i.tg||[]).map(t=>`<span class="ctag">${t}</span>`).join('')}</div></div></div>`;}
+
+function renderAll(){
+  document.getElementById('rg').innerHTML=RS.map(cc).join('');
+  document.getElementById('bg').innerHTML=BL.map(cc).join('');
+  document.getElementById('pg').innerHTML=PORT.map(p=>`<div class="pcard"><div class="phead"><div><div class="pco">${p.co}</div><div class="ptit">${p.ti}</div></div><span class="pbdg">${p.badge}</span></div><div class="pbody"><p class="pdsc">${p.desc}</p><div class="pms">${p.ms.map(m=>`<div class="pm"><strong>${m.v}</strong><span>${m.l}</span></div>`).join('')}</div></div></div>`).join('');
+  document.getElementById('sg').innerHTML=SPK.map(s=>`<div class="scard"><div class="sic"><svg width="17" height="17" stroke="var(--accent)" fill="none" stroke-width="1.8" viewBox="0 0 24 24">${ICS[s.ic]||ICS.mic}</svg></div><div><div class="styp">${s.ty}</div><div class="stit">${s.ti}</div><div class="sev">${s.ev}</div></div></div>`).join('');
+  renderDir();renderEvents();renderJobs();renderWall();
+}
+
+// ── JOIN ──────────────────────────────────────────────────
+function openJoin(){document.getElementById('join-modal').classList.add('open');}
+function closeJoin(){document.getElementById('join-modal').classList.remove('open');}
+function _doJoin(fn,ln,em,co,rk){
+  if(!fn||!em){showToast('Please fill in name and email.');return false;}
+  const newM={fn,ln,title:document.getElementById('mrk')?document.getElementById('mrk').value||rk:rk,co:co||'Independent',rk:rk.split(' ')[0],tags:[],isNew:true,li:''};
+  members.unshift(newM);renderDir();return true;
+}
+function joinCircle(){
+  const fn=document.getElementById('jfn').value.trim(),ln=document.getElementById('jln').value.trim(),em=document.getElementById('jem').value.trim(),co=document.getElementById('jco').value.trim(),rk=document.getElementById('jrk').value;
+  if(!fn||!em){showToast('Please fill in First Name and Email.');return;}
+  const newM={fn,ln:ln||'',title:rk||'Member',co:co||'Independent',rk:(rk||'Other').split(' ')[0],tags:[],isNew:true,li:document.getElementById('jli').value};
+  members.unshift(newM);renderDir();
+  ['jfn','jln','jem','jph','jli','jco'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('jrk').selectedIndex=0;
+  showToast('🎉 Welcome to The AI Leaders Circle, '+fn+'!');
+}
+function joinCircleModal(){
+  const fn=document.getElementById('mfn').value.trim(),em=document.getElementById('mem').value.trim(),ln=document.getElementById('mln').value.trim(),co=document.getElementById('mco').value.trim(),rk=document.getElementById('mrk').value;
+  if(!fn||!em){showToast('Please fill in First Name and Email.');return;}
+  const newM={fn,ln,title:rk||'Member',co:co||'Independent',rk:(rk||'Other').split(' ')[0],tags:[],isNew:true,li:document.getElementById('mli').value};
+  members.unshift(newM);renderDir();closeJoin();
+  showToast('🎉 Welcome to The AI Leaders Circle, '+fn+'!');
+}
+
+// ── INTRO ─────────────────────────────────────────────────
+let introName='';
+function openIntro(name,role){introName=name;document.getElementById('intro-target').textContent='Requesting an introduction to '+name+' — '+role;document.getElementById('intro-modal').classList.add('open');}
+function closeIntro(){document.getElementById('intro-modal').classList.remove('open');}
+function sendIntro(){const n=document.getElementById('irn').value.trim();if(!n){showToast('Please enter your name.');return;}closeIntro();showToast('✓ Intro request sent to '+introName+'!');}
+
+// ── JOB MODAL ─────────────────────────────────────────────
+function openPostJob(){document.getElementById('job-modal').classList.add('open');}
+function closeJobModal(){document.getElementById('job-modal').classList.remove('open');}
+function submitJob(){
+  const ti=document.getElementById('jbt').value.trim(),co=document.getElementById('jbc').value.trim();
+  if(!ti||!co){showToast('Please add title and company.');return;}
+  jobs.unshift({co,ti,loc:document.getElementById('jbl').value||'Remote',ty:document.getElementById('jbty').value,desc:document.getElementById('jbd').value||'See full JD upon request.'});
+  renderJobs();closeJobModal();showToast('✓ Role posted to the Opportunity Board!');
+}
+
+// ── UPLOAD ────────────────────────────────────────────────
+function trigF(s){document.getElementById('f'+s).click();}
+function handleF(inp,s){if(!inp.files.length)return;document.getElementById(s+'-f').value=inp.files[0].name;openUp(s);}
+function openUp(s){const f=document.getElementById('uf-'+s);f.classList.add('show');f.scrollIntoView({behavior:'smooth',block:'nearest'});}
+function closeUp(s){document.getElementById('uf-'+s).classList.remove('show');}
+function pub(s){
+  const now=new Date().toLocaleDateString('en-US',{month:'short',year:'numeric'});
+  if(s==='r'){
+    const ti=document.getElementById('r-t').value.trim();if(!ti){showToast('Please add a title.');return;}
+    RS.unshift({tp:document.getElementById('r-ty').value,ti,ex:document.getElementById('r-a').value||'No summary.',dt:now,tg:document.getElementById('r-tg').value.split(',').map(t=>t.trim()).filter(Boolean)});
+    ['r-t','r-a','r-tg','r-f'].forEach(id=>document.getElementById(id).value='');
+    showToast('✓ Research published!');
+  } else {
+    const ti=document.getElementById('b-t').value.trim();if(!ti){showToast('Please add a title.');return;}
+    BL.unshift({tp:document.getElementById('b-ty').value,ti,ex:document.getElementById('b-a').value||'No summary.',dt:now,tg:document.getElementById('b-tg').value.split(',').map(t=>t.trim()).filter(Boolean)});
+    ['b-t','b-a','b-tg','b-f'].forEach(id=>document.getElementById(id).value='');
+    showToast('✓ Article published!');
+  }
+  closeUp(s);
+// ── MANIFEST LOADER ───────────────────────────────────────
+async function loadManifest() {
+  try {
+    const res = await fetch('/manifest.json?v=' + Date.now());
+    if (!res.ok) throw new Error('No manifest');
+    const manifest = await res.json();
+
+    // Merge manifest content into seed arrays (manifest items take priority, prepended)
+    if (manifest.research?.length)  RS   = [...manifest.research,  ...RS.filter(s => !manifest.research.find(m => m.title === s.ti))];
+    if (manifest.blog?.length)      BL   = [...manifest.blog,      ...BL.filter(s => !manifest.blog.find(m => m.title === s.ti))];
+
+    // Re-map manifest items to match internal card schema
+    const remap = items => items.map(i => ({
+      tp: i.type || 'blog',
+      ti: i.title,
+      ex: i.excerpt || '',
+      dt: i.date || '',
+      tg: i.tags || [],
+      file: i.file || null,
+      featured: i.featured || false,
+      company: i.company || null,
+      metrics: i.metrics || null,
+    }));
+
+    if (manifest.research?.length)  RS = remap(manifest.research);
+    if (manifest.blog?.length)      BL = remap(manifest.blog);
+
+    // Portfolio from manifest
+    if (manifest.portfolio?.length) {
+      const extraPort = manifest.portfolio.map(i => ({
+        co: i.company || 'Aniruddha Mitra',
+        ti: i.title,
+        badge: (i.tags || [])[0] || 'Case Study',
+        desc: i.excerpt || '',
+        ms: i.metrics || [],
+        file: i.file || null,
+      }));
+      PORT.unshift(...extraPort);
+    }
+
+    // Speaking from manifest
+    if (manifest.speaking?.length) {
+      const extraSpk = manifest.speaking.map(i => ({
+        ty: i.type || 'Talk',
+        ti: i.title,
+        ev: i.location || '',
+        ic: 'mic',
+        file: i.file || null,
+      }));
+      SPK.unshift(...extraSpk);
+    }
+
+    console.log('✅ Manifest loaded:', Object.keys(manifest).map(k => `${k}:${(manifest[k]||[]).length}`).join(', '));
+  } catch (e) {
+    console.log('ℹ️  No manifest.json found — using seed data only');
+  }
+  renderAll();
+}
+
+loadManifest();
+}
+['r','b'].forEach(s=>{
+  const z=document.getElementById('d'+s);
+  z.addEventListener('dragover',e=>{e.preventDefault();z.classList.add('over');});
+  z.addEventListener('dragleave',()=>z.classList.remove('over'));
+  z.addEventListener('drop',e=>{e.preventDefault();z.classList.remove('over');const f=e.dataTransfer.files[0];if(!f)return;document.getElementById(s+'-f').value=f.name;openUp(s);});
+});
+
+// ── CHAT ─────────────────────────────────────────────────
+let ch=[],co2=false,rec=null;
+function toggleChat(){co2=!co2;document.getElementById('cwin').classList.toggle('open',co2);if(co2&&ch.length===0)addBot("Hello! I'm an AI concierge for Aniruddha Mitra and The AI Leaders Circle. Ask me about Mitra's background, the Circle community, upcoming events, or how to connect. How can I help?");}
+function addBot(t){const c=document.getElementById('cmsgs');const d=document.createElement('div');d.className='msg bot';d.textContent=t;c.appendChild(d);c.scrollTop=c.scrollHeight;}
+function addUser(t){const c=document.getElementById('cmsgs');const d=document.createElement('div');d.className='msg user';d.textContent=t;c.appendChild(d);c.scrollTop=c.scrollHeight;document.getElementById('csugs').style.display='none';}
+function addLoad(){const c=document.getElementById('cmsgs');const d=document.createElement('div');d.className='msg loading';d.id='ld';d.innerHTML='<div class="dot"></div><div class="dot"></div><div class="dot"></div>';c.appendChild(d);c.scrollTop=c.scrollHeight;}
+async function sendChat(){
+  const inp=document.getElementById('ci');const t=inp.value.trim();if(!t)return;inp.value='';
+  addUser(t);ch.push({role:'user',content:t});addLoad();
+  const sys=`You are the AI concierge for Aniruddha Mitra's personal brand website, representing both Mitra himself and The AI Leaders Circle — his professional network community.
+
+About Mitra: 25+ years in data and AI. Most recent: Field CDO / Head of Data & Analytics at Google Cloud (KeyBank $300M GCP commitment, Citi $550M, Fannie Mae MLOps, Comcast 2,500+ source Unified Data Fabric). Career: Google Cloud → Fannie Mae → Xfinity/Comcast → MicroStrategy. MBA Finance UMass Amherst; M.S. Clemson. Reston, VA. US citizen. Federal clearance eligible.
+Key metrics: $850M+ GCP commitments, AI revenue $15M→$500M, 70% PoC-to-production improvement, 95% dark data activation, 30% analyst productivity, $9M regulatory savings, NPS 57→85, DFAST 18h→2h.
+Targeting: CDO, VP AI/Data, Senior Architect. Open to board positions and startup equity.
+
+About The AI Leaders Circle: A curated network of CDOs, VPs of AI, data architects, investors, and founders. Features include: member directory, discussion wall, virtual roundtables, opportunity board, weekly newsletter. Free to join. Currently 47+ members.
+Upcoming events: CDO Roundtable (Apr 22), GenAI Workshop (May 6), Agentic AI Panel (May 20), FP&A AI Roundtable (Jun 3).
+
+Be confident, warm, and executive in tone. 2-4 sentences per response unless listing. Direct connection requests to the Contact section or Join form.`;
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:sys,messages:ch})});
+    const d=await r.json();
+    document.getElementById('ld')?.remove();
+    const rep=d.content?.[0]?.text||"I'm having trouble responding. Please use the Contact section to reach Mitra.";
+    addBot(rep);ch.push({role:'assistant',content:rep});
+    if(window.speechSynthesis&&document.getElementById('vb').classList.contains('on')){const u=new SpeechSynthesisUtterance(rep);u.rate=0.95;speechSynthesis.speak(u);}
+  }catch(e){document.getElementById('ld')?.remove();addBot("Connection issue. Please try the Contact section.");}
+}
+function useSug(btn){document.getElementById('ci').value=btn.textContent;sendChat();}
+
+// ── VOICE ─────────────────────────────────────────────────
+function startVoice(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){if(!co2)toggleChat();addBot("Voice isn't supported here. Try Chrome!");return;}
+  if(!co2)toggleChat();
+  document.getElementById('vov').classList.add('on');document.getElementById('vb').classList.add('on');
+  rec=new SR();rec.lang='en-US';rec.interimResults=false;
+  rec.onresult=e=>{const t=e.results[0][0].transcript;document.getElementById('vov').classList.remove('on');document.getElementById('vb').classList.remove('on');document.getElementById('ci').value=t;sendChat();};
+  rec.onerror=rec.onend=()=>{document.getElementById('vov').classList.remove('on');document.getElementById('vb').classList.remove('on');};
+  rec.start();
+}
+function stopVoice(){if(rec)rec.stop();document.getElementById('vov').classList.remove('on');document.getElementById('vb').classList.remove('on');}
+
+// ── MISC ──────────────────────────────────────────────────
+function submitContact(){const n=document.getElementById('cn').value.trim(),e=document.getElementById('ce').value.trim();if(!n||!e){showToast('Please fill in name and email.');return;}showToast('✓ Message sent! Mitra will be in touch soon.');['cn','ce','cm'].forEach(id=>document.getElementById(id).value='');}
+function nlSignup(){const e=document.getElementById('nl-email').value.trim();if(!e){showToast('Please enter your email.');return;}document.getElementById('nl-email').value='';showToast('✓ Subscribed to The AI Leaders Weekly!');}
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),35

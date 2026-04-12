@@ -1,0 +1,10 @@
+{
+  "title": "Why Your AI PoC Is Stuck at 30% Conversion (And How to Fix It)",
+  "type": "blog",
+  "excerpt": "Most enterprises can run a PoC. Very few can industrialize it. Here's the structural gap I've seen across 50+ enterprise AI programs — and the architecture that closes it.",
+  "tags": ["GenAI", "Strategy", "PoC", "Enterprise AI"],
+  "date": "April 2025",
+  "author": "Aniruddha Mitra",
+  "featured": true,
+  "file": "poc-conversion-fix.pdf"
+}
