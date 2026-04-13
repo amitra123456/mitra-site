@@ -6,6 +6,7 @@
   "rewrites": [
     { "source": "/manifest.json", "destination": "/manifest.json" },
     { "source": "/content/(.*)", "destination": "/content/$1" },
+    { "source": "/admin", "destination": "/admin.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [

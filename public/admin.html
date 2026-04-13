@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Aniruddha Mitra</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0A0F;--bg2:#111118;--bg3:#16161F;--bg4:#1C1C27;
+  --accent:#C8A96E;--accent2:#E8C98A;--adim:rgba(200,169,110,0.12);--abrd:rgba(200,169,110,0.28);
+  --text:#F0EDE8;--t2:#9E9B95;--t3:#6B6865;
+  --brd:rgba(255,255,255,0.07);--green:#4AAD82;--red:#D45A5A;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--abrd);border-radius:2px}
+
+/* GATE */
+#gate{position:fixed;inset:0;background:var(--bg);z-index:999;display:flex;align-items:center;justify-content:center}
+.gate-card{background:var(--bg3);border:1px solid var(--brd);border-radius:14px;padding:2.8rem;width:100%;max-width:380px;text-align:center}
+.gate-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--accent);margin-bottom:.25rem}
+.gate-sub{font-size:.7rem;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:2rem}
+.gate-inp{width:100%;background:var(--bg4);border:1px solid var(--brd);border-radius:6px;padding:.75rem 1rem;font-family:'Outfit',sans-serif;font-size:.88rem;color:var(--text);outline:none;margin-bottom:1rem;transition:border-color .2s}
+.gate-inp:focus{border-color:var(--abrd)}
+.gate-btn{width:100%;background:var(--accent);color:#0A0A0F;border:none;padding:.8rem;border-radius:6px;font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.gate-btn:hover{background:var(--accent2)}
+.gate-err{font-size:.75rem;color:var(--red);margin-top:.7rem;display:none}
+
+/* NAV */
+.adm-nav{height:62px;background:var(--bg2);border-bottom:1px solid var(--brd);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;position:sticky;top:0;z-index:100}
+.adm-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--accent);letter-spacing:.05em}
+.adm-logo span{color:var(--t3);font-size:.68rem;font-weight:400;margin-left:.6rem;letter-spacing:.14em;text-transform:uppercase;vertical-align:middle}
+.adm-out{background:transparent;border:1px solid var(--brd);color:var(--t2);padding:5px 14px;border-radius:4px;font-family:'Outfit',sans-serif;font-size:.7rem;cursor:pointer;letter-spacing:.09em;text-transform:uppercase;transition:all .2s}
+.adm-out:hover{border-color:var(--red);color:var(--red)}
+
+/* BODY */
+#admin{display:none;min-height:100vh}
+.adm-body{max-width:760px;margin:0 auto;padding:2.5rem 1.5rem}
+.adm-section{margin-bottom:3.5rem;padding-bottom:3rem;border-bottom:1px solid var(--brd)}
+.adm-section:last-child{border-bottom:none}
+.adm-sh{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+.adm-hint{font-size:.74rem;color:var(--t3);margin-bottom:1.3rem;line-height:1.6}
+
+/* DROP */
+.drop{border:2px dashed var(--brd);border-radius:12px;padding:2.2rem;text-align:center;transition:all .3s;cursor:pointer;margin-bottom:1.2rem;position:relative}
+.drop:hover,.drop.over{border-color:var(--accent);background:var(--adim)}
+.drop input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.dtit{font-size:.88rem;font-weight:500;color:var(--t2);margin-bottom:.3rem;margin-top:.6rem}
+.dhint{font-size:.73rem;color:var(--t3)}
+.dhint strong{color:var(--accent)}
+
+/* FORM */
+.uform{background:var(--bg3);border:1px solid var(--brd);border-radius:10px;padding:1.4rem;margin-bottom:.5rem;display:none}
+.uform.show{display:block}
+.form-title{font-size:.7rem;font-weight:600;color:var(--accent);margin-bottom:1rem;text-transform:uppercase;letter-spacing:.12em}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.frow.full{grid-template-columns:1fr}
+.fl{display:block;font-size:.67rem;color:var(--t3);margin-bottom:4px;letter-spacing:.07em;text-transform:uppercase}
+.fi{width:100%;background:var(--bg4);border:1px solid var(--brd);border-radius:5px;padding:7px 10px;font-family:'Outfit',sans-serif;font-size:.82rem;color:var(--text);outline:none;transition:border-color .2s}
+.fi:focus{border-color:var(--abrd)}
+.fs{width:100%;background:var(--bg4);border:1px solid var(--brd);border-radius:5px;padding:7px 10px;font-family:'Outfit',sans-serif;font-size:.82rem;color:var(--text);outline:none;cursor:pointer}
+.fta{width:100%;background:var(--bg4);border:1px solid var(--brd);border-radius:5px;padding:7px 10px;font-family:'Outfit',sans-serif;font-size:.82rem;color:var(--text);outline:none;resize:vertical;line-height:1.5;transition:border-color .2s}
+.fta:focus{border-color:var(--abrd)}
+.pbtn{background:var(--accent);color:#0A0A0F;border:none;padding:9px 22px;border-radius:4px;font-family:'Outfit',sans-serif;font-size:.77rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.pbtn:hover{background:var(--accent2)}
+.pbtn:disabled{opacity:.5;cursor:not-allowed}
+.cbtn{background:transparent;color:var(--t3);border:1px solid var(--brd);padding:9px 16px;border-radius:4px;font-family:'Outfit',sans-serif;font-size:.77rem;cursor:pointer;margin-left:8px;transition:all .2s}
+.cbtn:hover{border-color:var(--t2);color:var(--t2)}
+
+/* TOAST */
+#toast{position:fixed;bottom:2rem;right:2rem;background:var(--bg3);border:1px solid var(--abrd);border-radius:8px;padding:.8rem 1.3rem;font-size:.8rem;color:var(--text);opacity:0;transition:opacity .3s;pointer-events:none;max-width:340px;z-index:9999;line-height:1.5}
+#toast.show{opacity:1}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-logo">Mitra</div>
+    <p class="gate-sub">Content Admin</p>
+    <input class="gate-inp" id="pw" type="password" placeholder="Password" onkeydown="if(event.key==='Enter')login()">
+    <button class="gate-btn" onclick="login()">Sign In</button>
+    <p class="gate-err" id="gate-err">Incorrect password — try again</p>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="admin">
+  <nav class="adm-nav">
+    <div class="adm-logo">Mitra <span>Admin</span></div>
+    <button class="adm-out" onclick="logout()">Sign Out</button>
+  </nav>
+
+  <div class="adm-body">
+
+    <!-- RESEARCH -->
+    <div class="adm-section">
+      <h2 class="adm-sh">Research &amp; White Papers</h2>
+      <p class="adm-hint">Upload a PDF — it commits to <code style="color:var(--accent);font-size:.78rem">content/research/</code> in GitHub, triggers a Vercel rebuild (~30s), and appears live on the public site.</p>
+      <div class="drop" id="dr">
+        <input type="file" id="fr" accept=".pdf,.docx,.md,.txt" onchange="handleF(this,'r')">
+        <svg width="32" height="32" fill="none" stroke="var(--t3)" stroke-width="1.4" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
+        <p class="dtit">Click or drop a research paper here</p>
+        <p class="dhint">Supports <strong>PDF, DOCX, MD</strong> &middot; Max 4 MB</p>
+      </div>
+      <div class="uform" id="uf-r">
+        <p class="form-title">Publish Research</p>
+        <div class="frow">
+          <div><label class="fl">Title</label><input class="fi" id="r-t" placeholder="Paper title"/></div>
+          <div><label class="fl">Type</label><select class="fs" id="r-ty"><option value="research">Research Paper</option><option value="whitepaper">White Paper</option><option value="framework">Framework</option></select></div>
+        </div>
+        <div class="frow full"><label class="fl">Abstract</label><textarea class="fta" id="r-a" placeholder="Brief summary…" style="min-height:75px"></textarea></div>
+        <div class="frow">
+          <div><label class="fl">Tags (comma-separated)</label><input class="fi" id="r-tg" placeholder="AI Governance, CDO"/></div>
+          <div><label class="fl">Selected File</label><input class="fi" id="r-f" readonly placeholder="No file chosen"/></div>
+        </div>
+        <div style="margin-top:.8rem">
+          <button class="pbtn" id="r-pbtn" onclick="pub('r')">Publish</button>
+          <button class="cbtn" onclick="closeUp('r')">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOG -->
+    <div class="adm-section">
+      <h2 class="adm-sh">Blog &amp; Insights</h2>
+      <p class="adm-hint">Upload articles, essays, and thought leadership pieces to the Blog section.</p>
+      <div class="drop" id="db">
+        <input type="file" id="fb" accept=".pdf,.docx,.md,.txt" onchange="handleF(this,'b')">
+        <svg width="32" height="32" fill="none" stroke="var(--t3)" stroke-width="1.4" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <p class="dtit">Click or drop an article here</p>
+        <p class="dhint">Supports <strong>PDF, DOCX, MD, TXT</strong> &middot; Max 4 MB</p>
+      </div>
+      <div class="uform" id="uf-b">
+        <p class="form-title">Publish Insight</p>
+        <div class="frow">
+          <div><label class="fl">Title</label><input class="fi" id="b-t" placeholder="Article title"/></div>
+          <div><label class="fl">Type</label><select class="fs" id="b-ty"><option value="blog">Blog Post</option><option value="research">Analysis</option><option value="framework">Framework</option></select></div>
+        </div>
+        <div class="frow full"><label class="fl">Summary</label><textarea class="fta" id="b-a" placeholder="What is this about?" style="min-height:75px"></textarea></div>
+        <div class="frow">
+          <div><label class="fl">Tags (comma-separated)</label><input class="fi" id="b-tg" placeholder="GenAI, Strategy"/></div>
+          <div><label class="fl">Selected File</label><input class="fi" id="b-f" readonly placeholder="No file chosen"/></div>
+        </div>
+        <div style="margin-top:.8rem">
+          <button class="pbtn" id="b-pbtn" onclick="pub('b')">Publish</button>
+          <button class="cbtn" onclick="closeUp('b')">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ── AUTH ──────────────────────────────────────────────────
+const PASS='Zxcvbn1!';
+function login(){
+  const v=document.getElementById('pw').value;
+  if(v===PASS){
+    sessionStorage.setItem('adm','1');
+    document.getElementById('gate').style.display='none';
+    document.getElementById('admin').style.display='block';
+  }else{
+    document.getElementById('gate-err').style.display='block';
+    document.getElementById('pw').value='';
+    document.getElementById('pw').focus();
+  }
+}
+function logout(){
+  sessionStorage.removeItem('adm');
+  document.getElementById('gate').style.display='flex';
+  document.getElementById('admin').style.display='none';
+  document.getElementById('pw').value='';
+}
+if(sessionStorage.getItem('adm')==='1'){
+  document.getElementById('gate').style.display='none';
+  document.getElementById('admin').style.display='block';
+}
+
+// ── TOAST ─────────────────────────────────────────────────
+let _tt;
+function showToast(msg){
+  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  clearTimeout(_tt);_tt=setTimeout(()=>t.classList.remove('show'),4000);
+}
+
+// ── UPLOAD ────────────────────────────────────────────────
+let selectedFiles={};
+
+function handleF(inp,s){
+  if(!inp.files.length)return;
+  selectedFiles[s]=inp.files[0];
+  document.getElementById(s+'-f').value=inp.files[0].name;
+  openUp(s);
+}
+function openUp(s){
+  const f=document.getElementById('uf-'+s);
+  f.classList.add('show');
+  setTimeout(()=>f.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+}
+function closeUp(s){
+  document.getElementById('uf-'+s).classList.remove('show');
+  selectedFiles[s]=null;
+  document.getElementById(s+'-f').value='';
+}
+
+async function pub(s){
+  const ti=document.getElementById(s+'-t').value.trim();
+  if(!ti){showToast('Please add a title.');return;}
+  const f=selectedFiles[s];
+  if(!f){showToast('Please select a file first.');return;}
+  if(f.size>4*1024*1024){showToast('File too large (max 4 MB). Try compressing first.');return;}
+
+  const pbtn=document.getElementById(s+'-pbtn');
+  pbtn.disabled=true;pbtn.textContent='Uploading…';
+
+  try{
+    const b64=await new Promise((res,rej)=>{
+      const rd=new FileReader();
+      rd.onload=()=>res(rd.result.split(',')[1]);
+      rd.onerror=rej;
+      rd.readAsDataURL(f);
+    });
+    const tags=document.getElementById(s+'-tg').value.split(',').map(t=>t.trim()).filter(Boolean);
+    const excerpt=document.getElementById(s+'-a').value.trim();
+    const type=document.getElementById(s+'-ty').value;
+
+    const resp=await fetch('/api/upload-research',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({filename:f.name,content:b64,metadata:{title:ti,type,excerpt,tags}})
+    });
+    if(!resp.ok){
+      const e=await resp.json().catch(()=>({}));
+      throw new Error(e.error||'Upload failed');
+    }
+    showToast('Published! Will appear on the live site after rebuild (~30s).');
+    [s+'-t',s+'-a',s+'-tg'].forEach(id=>document.getElementById(id).value='');
+    closeUp(s);
+  }catch(err){
+    console.error('upload error:',err);
+    showToast('Upload failed: '+err.message);
+  }finally{
+    pbtn.disabled=false;pbtn.textContent='Publish';
+  }
+}
+
+// ── DRAG & DROP ───────────────────────────────────────────
+['r','b'].forEach(s=>{
+  const z=document.getElementById('d'+s);
+  z.addEventListener('dragover',e=>{e.preventDefault();z.classList.add('over');});
+  z.addEventListener('dragleave',()=>z.classList.remove('over'));
+  z.addEventListener('drop',e=>{
+    e.preventDefault();z.classList.remove('over');
+    const f=e.dataTransfer.files[0];
+    if(!f)return;
+    selectedFiles[s]=f;
+    document.getElementById(s+'-f').value=f.name;
+    openUp(s);
+  });
+});
+</script>
+</body>
+</html>
