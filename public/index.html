@@ -191,6 +191,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:68px;display:flex;ali
 .t-f{background:rgba(212,90,90,.15);color:#E88888}
 .ctit{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:.5rem;line-height:1.3}
 .cex{font-size:.77rem;color:var(--t2);line-height:1.65;margin-bottom:.8rem}
+.c-dl{display:inline-block;margin-top:.6rem;font-size:.72rem;font-weight:500;color:var(--accent);text-decoration:none;letter-spacing:.06em;border:1px solid var(--abrd);border-radius:4px;padding:3px 10px;transition:all .2s}.c-dl:hover{background:var(--adim)}
 .cmet{display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:var(--t3)}
 .ctag{padding:2px 7px;border-radius:100px;background:var(--bg4);border:1px solid var(--brd);font-size:.63rem;color:var(--t3)}
 
@@ -979,7 +980,7 @@ function postDiscussion(){
   renderWall();showToast('✓ Post published to the Discussion Wall!');
 }
 
-function cc(i){return `<div class="ccard"><span class="ctp ${TCS[i.tp]||'t-b'}">${i.tp}</span><div class="ctit">${i.ti}</div><p class="cex">${i.ex}</p><div class="cmet"><span>${i.dt||''}</span><div style="display:flex;gap:4px;flex-wrap:wrap">${(i.tg||[]).map(t=>`<span class="ctag">${t}</span>`).join('')}</div></div></div>`;}
+function cc(i){return `<div class="ccard"><span class="ctp ${TCS[i.tp]||'t-b'}">${i.tp}</span><div class="ctit">${i.ti}</div><p class="cex">${i.ex}</p><div class="cmet"><span>${i.dt||''}</span><div style="display:flex;gap:4px;flex-wrap:wrap">${(i.tg||[]).map(t=>`<span class="ctag">${t}</span>`).join('')}</div></div>${i.file?`<a href="${i.file}" target="_blank" rel="noopener" class="c-dl">↓ Download PDF</a>`:''}</div>`;}
 
 function renderAll(){
   document.getElementById('rg').innerHTML=RS.map(cc).join('');
@@ -1032,33 +1033,48 @@ function submitJob(){
 
 // ── UPLOAD ────────────────────────────────────────────────
 function trigF(s){document.getElementById('f'+s).click();}
-function handleF(inp,s){if(!inp.files.length)return;document.getElementById(s+'-f').value=inp.files[0].name;openUp(s);}
+let selectedFiles={};
+function handleF(inp,s){if(!inp.files.length)return;selectedFiles[s]=inp.files[0];document.getElementById(s+'-f').value=inp.files[0].name;openUp(s);}
 function openUp(s){const f=document.getElementById('uf-'+s);f.classList.add('show');f.scrollIntoView({behavior:'smooth',block:'nearest'});}
 function closeUp(s){document.getElementById('uf-'+s).classList.remove('show');}
-function pub(s){
+async function pub(s){
   const now=new Date().toLocaleDateString('en-US',{month:'short',year:'numeric'});
   if(s==='r'){
     const ti=document.getElementById('r-t').value.trim();if(!ti){showToast('Please add a title.');return;}
-    RS.unshift({tp:document.getElementById('r-ty').value,ti,ex:document.getElementById('r-a').value||'No summary.',dt:now,tg:document.getElementById('r-tg').value.split(',').map(t=>t.trim()).filter(Boolean)});
+    const item={tp:document.getElementById('r-ty').value,ti,ex:document.getElementById('r-a').value||'No summary.',dt:now,tg:document.getElementById('r-tg').value.split(',').map(t=>t.trim()).filter(Boolean)};
+    const f=selectedFiles['r'];
+    if(f){
+      if(f.size>4*1024*1024){showToast('⚠ File too large (max 4 MB). Try compressing the PDF.');return;}
+      const pbtn=document.querySelector('#uf-r .pbtn');if(pbtn){pbtn.disabled=true;pbtn.textContent='Uploading…';}
+      try{
+        const b64=await new Promise((res,rej)=>{const rd=new FileReader();rd.onload=()=>res(rd.result.split(',')[1]);rd.onerror=rej;rd.readAsDataURL(f);});
+        const resp=await fetch('/api/upload-research',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({filename:f.name,content:b64,metadata:{title:ti,type:item.tp,excerpt:item.ex,tags:item.tg}})});
+        if(!resp.ok){const e=await resp.json().catch(()=>({}));throw new Error(e.error||'Upload failed');}
+        item.file='/content/research/'+f.name;
+        showToast('✓ Uploaded! Paper will be live after site rebuild (~30s).');
+      }catch(err){
+        console.error('upload-research:',err);
+        showToast('⚠ Upload failed — added locally. Check GitHub env vars.');
+      }finally{if(pbtn){pbtn.disabled=false;pbtn.textContent='Publish';}}
+    }else{
+      showToast('✓ Research published!');
+    }
+    RS.unshift(item);selectedFiles['r']=null;
     ['r-t','r-a','r-tg','r-f'].forEach(id=>document.getElementById(id).value='');
-    showToast('✓ Research published!');
   } else {
     const ti=document.getElementById('b-t').value.trim();if(!ti){showToast('Please add a title.');return;}
     BL.unshift({tp:document.getElementById('b-ty').value,ti,ex:document.getElementById('b-a').value||'No summary.',dt:now,tg:document.getElementById('b-tg').value.split(',').map(t=>t.trim()).filter(Boolean)});
     ['b-t','b-a','b-tg','b-f'].forEach(id=>document.getElementById(id).value='');
     showToast('✓ Article published!');
   }
-  closeUp(s);
+  closeUp(s);renderAll();
+}
 // ── MANIFEST LOADER ───────────────────────────────────────
 async function loadManifest() {
   try {
     const res = await fetch('/manifest.json?v=' + Date.now());
     if (!res.ok) throw new Error('No manifest');
     const manifest = await res.json();
-
-    // Merge manifest content into seed arrays (manifest items take priority, prepended)
-    if (manifest.research?.length)  RS   = [...manifest.research,  ...RS.filter(s => !manifest.research.find(m => m.title === s.ti))];
-    if (manifest.blog?.length)      BL   = [...manifest.blog,      ...BL.filter(s => !manifest.blog.find(m => m.title === s.ti))];
 
     // Re-map manifest items to match internal card schema
     const remap = items => items.map(i => ({
@@ -1109,12 +1125,11 @@ async function loadManifest() {
 }
 
 loadManifest();
-}
 ['r','b'].forEach(s=>{
   const z=document.getElementById('d'+s);
   z.addEventListener('dragover',e=>{e.preventDefault();z.classList.add('over');});
   z.addEventListener('dragleave',()=>z.classList.remove('over'));
-  z.addEventListener('drop',e=>{e.preventDefault();z.classList.remove('over');const f=e.dataTransfer.files[0];if(!f)return;document.getElementById(s+'-f').value=f.name;openUp(s);});
+  z.addEventListener('drop',e=>{e.preventDefault();z.classList.remove('over');const f=e.dataTransfer.files[0];if(!f)return;selectedFiles[s]=f;document.getElementById(s+'-f').value=f.name;openUp(s);});
 });
 
 // ── CHAT ─────────────────────────────────────────────────
