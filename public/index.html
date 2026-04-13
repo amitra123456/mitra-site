@@ -548,7 +548,7 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:2rem 5rem;di
     </div>
     <button class="btn-o" onclick="openUp('r')" style="white-space:nowrap;height:fit-content">+ Upload Research</button>
   </div>
-  <div class="drop" id="dr" onclick="trigF('r')">
+  <div class="drop" id="dr">
     <input type="file" id="fr" accept=".pdf,.docx,.md,.txt" onchange="handleF(this,'r')">
     <svg width="32" height="32" fill="none" stroke="var(--t3)" stroke-width="1.4" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
     <p class="dtit">Drop a research paper or white paper here</p>
@@ -573,7 +573,7 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:2rem 5rem;di
     </div>
     <button class="btn-o" onclick="openUp('b')" style="white-space:nowrap;height:fit-content">+ Upload Article</button>
   </div>
-  <div class="drop" id="db" onclick="trigF('b')">
+  <div class="drop" id="db">
     <input type="file" id="fb" accept=".pdf,.docx,.md,.txt" onchange="handleF(this,'b')">
     <svg width="32" height="32" fill="none" stroke="var(--t3)" stroke-width="1.4" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
     <p class="dtit">Drop an article, essay, or thought piece here</p>
@@ -1032,7 +1032,6 @@ function submitJob(){
 }
 
 // ── UPLOAD ────────────────────────────────────────────────
-function trigF(s){document.getElementById('f'+s).click();}
 let selectedFiles={};
 function handleF(inp,s){if(!inp.files.length)return;selectedFiles[s]=inp.files[0];document.getElementById(s+'-f').value=inp.files[0].name;openUp(s);}
 function openUp(s){const f=document.getElementById('uf-'+s);f.classList.add('show');f.scrollIntoView({behavior:'smooth',block:'nearest'});}
