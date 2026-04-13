@@ -1,6 +1,46 @@
 {
-  "generated": "2026-04-13T03:44:44.343Z",
+  "generated": "2026-04-13T03:50:06.145Z",
   "research": [
+    {
+      "id": "n",
+      "section": "research",
+      "type": "research",
+      "title": "n",
+      "excerpt": "c",
+      "tags": [
+        "nbvbn"
+      ],
+      "date": "Apr 2026",
+      "file": "/content/research/Mitra_SVP_Tech_Innovation.docx--1-.pdf",
+      "url": null,
+      "author": "Aniruddha Mitra",
+      "featured": false,
+      "company": null,
+      "metrics": null,
+      "eventDate": null,
+      "location": null,
+      "jobType": null
+    },
+    {
+      "id": "x",
+      "section": "research",
+      "type": "research",
+      "title": "x",
+      "excerpt": "zzxzz",
+      "tags": [
+        "zx"
+      ],
+      "date": "Apr 2026",
+      "file": "/content/research/Value-profiling-Sidecar.pdf",
+      "url": null,
+      "author": "Aniruddha Mitra",
+      "featured": false,
+      "company": null,
+      "metrics": null,
+      "eventDate": null,
+      "location": null,
+      "jobType": null
+    },
     {
       "id": "ai-native-data-governance-from-policy-to-platform",
       "section": "research",
