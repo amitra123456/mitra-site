@@ -1,1 +1,14 @@
-{`n  "name": "mitra-site",`n  "private": true,`n  "version": "0.1.0",`n  "scripts": {`n    "dev": "npx concurrently \"npm --prefix client run dev\" \"npm --prefix server run dev\"",`n    "start": "npm --prefix server start",`n    "install:all": "npm install && cd client && npm install && cd ../server && npm install",`n    "build": "npm --prefix client run build"`n  },`n  "devDependencies": {`n    "concurrently": "^8.2.2"`n  }`n}`n
+{
+  "name": "mitra-site",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "npx concurrently \"npm --prefix client run dev\" \"npm --prefix server run dev\"",
+    "start": "npm --prefix server start",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "build": "npm --prefix client run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
