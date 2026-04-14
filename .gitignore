@@ -1,8 +1,1 @@
-node_modules/
-.DS_Store
-*.DS_Store
-.env
-.env.local
-.vercel
-public/content/
-*.log
+node_modules/`nclient/node_modules/`nserver/node_modules/`.DS_Store`n.env`n.env.local`nnpm-debug.log*`n.vscode/`ndist/`n.claude/`n

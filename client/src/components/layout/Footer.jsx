@@ -1,0 +1,1 @@
+export default function Footer() {`n  return (`n    <footer className="border-t border-slate-200 bg-white py-8">`n      <div className="mx-auto max-w-6xl px-6 text-sm text-slate-500">`n        <p>Built with React, Vite, and Express.</p>`n        <p className="mt-2">© 2026 Aniruddha Mitra. All rights reserved.</p>`n      </div>`n    </footer>`n  )`n}`n
